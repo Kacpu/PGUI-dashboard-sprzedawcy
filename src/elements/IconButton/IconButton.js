@@ -1,8 +1,8 @@
+import MenuIcon from "../../assets/icons/hamburger-menu.png"
+
 function IconButton(){
     return(
-        <div>
-            icon
-        </div>
+        <button><MenuIcon /></button>
     )
 }
 

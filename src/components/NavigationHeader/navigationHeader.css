@@ -1,0 +1,24 @@
+.nav-header{
+    overflow: hidden;
+    background-color: #AD90FF; 
+    
+}
+
+.lab{
+    visibility: hidden;
+}
+
+button{
+    float: right;
+}
+
+
+.menu-button{
+    float: left;
+}
+
+
+.account-button{
+    float: right;
+}
+

@@ -1,0 +1,22 @@
+.btn{
+    display: block;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 40px;
+    border:none;
+}
+
+img{
+    display:block;
+    height: 52px;
+    width: 52px;
+}
+
+.btn:hover{
+    background-color: #9483C7;
+}
+
+.btn:active{
+    background-color: #8072aa;
+
+}

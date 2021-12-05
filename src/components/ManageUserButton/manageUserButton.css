@@ -1,0 +1,16 @@
+.name-btn{
+    background-color: transparent;
+    vertical-align: middle;
+    float:left;
+    align-self: center;
+}
+
+label{
+    float:left;
+    vertical-align: bottom;
+}
+
+.div-btn{
+    align-items: baseline;
+    height: 52px;
+}
