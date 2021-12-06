@@ -16,19 +16,19 @@ function NavigationHeader() {
     return (
         <div className={styles.navHeader}>
             <NavHeaderButton
-                className={" menuButton"}
+                style={styles.menuButton}
                 onClick={() => console.log("menu")}
                 icon={<img src={MenuPng} alt="menu" className={styles.imgIcon}/>}
             />
 
             <NavHeaderButton
-                className={" settingsButton"}
+                style={styles.settingsButton}
                 onClick={() => console.log("settings")}
                 icon={<img src={SettingsPng} alt="user account" className={styles.imgIcon}/>}
             />
 
             <ManageUserButton
-                className={" accountButton"}
+                style={styles.accountButton}
                 username={"Name Surname"}
             />
 

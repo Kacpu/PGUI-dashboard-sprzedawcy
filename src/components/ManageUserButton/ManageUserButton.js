@@ -1,18 +1,25 @@
 import NavHeaderButton from "../../elements/IconButton/NavHeaderButton";
 import UserPng from '../../assets/icons/account-icon.png';
+import React from "react";
+import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import styles from './manageUserButton.module.css';
 
-function ManageUserButton(props) {
+class ManageUserButton extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {isMenuOpen: false};
+    }
 
-  var cssName = styles.accountBtn + props.className;
-  return (
-    <button className={cssName}>
-      <img src={UserPng} className={styles.ImgIcon} />
-      <label className={styles.userLabel}>{props.username}</label>
-    </button>
-  );
+    render() {
+        return (
+            <div>
+                <button className = {styles.accountBtn + ' ' + this.props.style}>
+                    <img className={styles.imgIcon} src={UserPng}  alt={"user"}/>
+                    <label className={styles.userLabel}>{this.props.username}</label>
+                </button>
+            </div>
+        );
+    }
 }
-
-
 
 export default ManageUserButton;

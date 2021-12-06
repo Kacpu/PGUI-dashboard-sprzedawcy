@@ -5,18 +5,11 @@
     border:none;
 }
 
-.imgIcon{
-    display:block;
-    height: 38px;
-    width: 38x;
-    pointer-events: none;
-}
-
 .btn:hover{
     background-color: #9483C7;
 }
 
 .btn:active{
     background-color: #8072aa;
-
 }
+

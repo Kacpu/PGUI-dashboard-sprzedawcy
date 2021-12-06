@@ -3,9 +3,9 @@ import styles from "./dashboard.module.css"
 function Dashboard(){
     return(
       <div className={styles.dashboardDiv}>
-      <WidgetFrame />
-      <WidgetFrame />
-      <WidgetFrame />
+        <WidgetFrame />
+        <WidgetFrame />
+        <WidgetFrame />
       </div>
     );
 }

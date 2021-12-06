@@ -12,6 +12,8 @@
     display: block;
     float:left;
     pointer-events: none;
+    height: 38px;
+    width: 38px;
 }
 .accountBtn{
     height: 45px;

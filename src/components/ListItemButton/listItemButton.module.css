@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px 0 55px;
+    align-items: center;
+    background: #EFE8FD;
+    height: 46px;
+
+    flex: none;
+    align-self: stretch;
+}
+
+.container:hover {
+    background: #AE9BD8;
+}
+
+.label {
+    font-size: 16px;
+    line-height: 1;
+
+    flex: none;
+    margin-left: 16px;
+}
