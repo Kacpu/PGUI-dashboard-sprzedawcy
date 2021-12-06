@@ -32,11 +32,13 @@ function NavigationHeader() {
         <div className="nav-header">
             <NavHeaderButton
                 className={" menu-button"}
+                onClick={() => console.log("menu")}
                 icon={<img src={MenuPng} alt="menu" />}
             />
 
             <NavHeaderButton
                 className={" settings-button"}
+                onClick={() => console.log("settings")}
                 icon={<img src={SettingsPng} alt="user account" />}
             />
 

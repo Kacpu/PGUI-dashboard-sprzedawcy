@@ -8,8 +8,10 @@ export default function NavHeaderButton(props){
         type: "menu", icon: {BiMenu}
     }]
 
+
+
     var cssName = "btn"+props.className;
     return(
-        <button className={cssName}>{props.icon}</button>
+        <button onClick={props.onClick} className={cssName}>{props.icon}</button>
     );
 }
