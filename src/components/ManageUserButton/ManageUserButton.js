@@ -4,11 +4,11 @@ import './manageUserButton.css';
 
 function ManageUserButton(props) {
 
-  var cssName = "div-btn"+props.className;
+  var cssName = "account-btn"+props.className;
   return (
     <button className = {cssName}>
-      <img src={UserPng} className="imgIcon" />
-      <label>{props.username}</label>
+      <img src={UserPng} className="img-icon" />
+      <label className="user-label">{props.username}</label>
     </button>
   );
 }

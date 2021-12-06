@@ -16,30 +16,18 @@ function NavigationHeader() {
         );
     }
 
-    // function MenuBlueIcon() {
-    //     return (
-    //       <IconContext.Provider
-    //         value={{ color: 'white', size: '50px', display: "flex", justifyContent: "center"}}
-    //       >
-    //         <div>
-    //           <BiMenu />
-    //         </div>
-    //       </IconContext.Provider>
-    //     );
-    //   }
-
     return (
         <div className="nav-header">
             <NavHeaderButton
                 className={" menu-button"}
                 onClick={() => console.log("menu")}
-                icon={<img src={MenuPng} alt="menu" className="imgIcon"/>}
+                icon={<img src={MenuPng} alt="menu" className="img-icon"/>}
             />
 
             <NavHeaderButton
                 className={" settings-button"}
                 onClick={() => console.log("settings")}
-                icon={<img src={SettingsPng} alt="user account" className="imgIcon"/>}
+                icon={<img src={SettingsPng} alt="user account" className="img-icon"/>}
             />
 
             <ManageUserButton

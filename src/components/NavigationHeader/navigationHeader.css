@@ -8,17 +8,16 @@
     visibility: hidden;
 }
 
-button{
-    float: right;
-    height: 45px;
-}
-
 .settings-button{
+    
+    height: 45px;
+    float: right;
     padding-inline: 10px;
 }
 
 .menu-button{
     float: left;
+    height: 45px;
     padding-inline: 10px;
 }
 
