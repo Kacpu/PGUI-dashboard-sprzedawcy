@@ -7,8 +7,8 @@ function ManageUserButton(props) {
   var cssName = "div-btn"+props.className;
   return (
     <button className = {cssName}>
-      <label>{props.username}</label>
       <img src={UserPng} />
+      <label>{props.username}</label>
     </button>
   );
 }

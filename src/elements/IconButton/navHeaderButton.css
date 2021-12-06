@@ -2,14 +2,13 @@
     display: block;
     text-decoration: none;
     background-color: transparent;
-    font-size: 40px;
     border:none;
 }
 
 img{
     display:block;
-    height: 52px;
-    width: 52px;
+    height: 38px;
+    width: 38x;
 }
 
 .btn:hover{

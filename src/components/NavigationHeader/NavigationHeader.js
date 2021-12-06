@@ -42,7 +42,7 @@ function NavigationHeader() {
 
             <ManageUserButton
                 className={" account-button"}
-                username={"username"}
+                username={"userName"}
             />
 
         </div>
