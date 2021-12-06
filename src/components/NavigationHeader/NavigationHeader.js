@@ -33,13 +33,13 @@ function NavigationHeader() {
             <NavHeaderButton
                 className={" menu-button"}
                 onClick={() => console.log("menu")}
-                icon={<img src={MenuPng} alt="menu" />}
+                icon={<img src={MenuPng} alt="menu" className="imgIcon"/>}
             />
 
             <NavHeaderButton
                 className={" settings-button"}
                 onClick={() => console.log("settings")}
-                icon={<img src={SettingsPng} alt="user account" />}
+                icon={<img src={SettingsPng} alt="user account" className="imgIcon"/>}
             />
 
             <ManageUserButton
