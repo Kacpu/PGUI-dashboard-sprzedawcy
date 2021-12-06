@@ -1,0 +1,17 @@
+.dashboard-div {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* @media (min-width: 900px) {
+    .dashboard-div { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 600px) {
+    .dashboard-div { grid-template-columns: repeat(2, 1fr); }
+  }  */

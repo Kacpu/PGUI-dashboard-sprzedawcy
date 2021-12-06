@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <NavigationHeader />
       <Dashboard />
-      <Playground />
+      {/* <Playground /> */}
       <Footer />
     </div>
   );
