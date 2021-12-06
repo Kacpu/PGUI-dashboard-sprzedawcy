@@ -1,14 +1,14 @@
 import NavHeaderButton from "../../elements/IconButton/NavHeaderButton";
 import UserPng from '../../assets/icons/account-icon.png';
-import './manageUserButton.css';
+import styles from './manageUserButton.module.css';
 
 function ManageUserButton(props) {
 
-  var cssName = "account-btn"+props.className;
+  var cssName = styles.accountBtn + props.className;
   return (
-    <button className = {cssName}>
-      <img src={UserPng} className="img-icon" />
-      <label className="user-label">{props.username}</label>
+    <button className={cssName}>
+      <img src={UserPng} className={styles.ImgIcon} />
+      <label className={styles.userLabel}>{props.username}</label>
     </button>
   );
 }
