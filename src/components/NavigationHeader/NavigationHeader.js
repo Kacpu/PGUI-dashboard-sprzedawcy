@@ -1,10 +1,7 @@
 import ManageUserButton from "../ManageUserButton/ManageUserButton";
-import styles from './navigationHeader.css';
+import styles from './navigationHeader.module.css';
 import NavHeaderButton from '../../elements/IconButton/NavHeaderButton'
-import { BiMenu } from 'react-icons/bi';
-import { IconContext } from "react-icons";
 import MenuPng from '../../assets/icons/hamburger-menu.png';
-
 import SettingsPng from '../../assets/icons/settings-icon.png'
 
 function NavigationHeader() {
@@ -17,21 +14,21 @@ function NavigationHeader() {
     }
 
     return (
-        <div className="nav-header">
+        <div className={styles.navHeader}>
             <NavHeaderButton
-                className={" menu-button"}
+                className={" menuButton"}
                 onClick={() => console.log("menu")}
-                icon={<img src={MenuPng} alt="menu" className="img-icon"/>}
+                icon={<img src={MenuPng} alt="menu" className={styles.imgIcon}/>}
             />
 
             <NavHeaderButton
-                className={" settings-button"}
+                className={" settingsButton"}
                 onClick={() => console.log("settings")}
-                icon={<img src={SettingsPng} alt="user account" className="img-icon"/>}
+                icon={<img src={SettingsPng} alt="user account" className={styles.imgIcon}/>}
             />
 
             <ManageUserButton
-                className={" account-button"}
+                className={" accountButton"}
                 username={"Name Surname"}
             />
 

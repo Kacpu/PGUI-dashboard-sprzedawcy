@@ -1,4 +1,4 @@
-.nav-header{
+.navHeader{
     overflow: hidden;
     background-color: #AD90FF; 
     
@@ -8,21 +8,21 @@
     visibility: hidden;
 }
 
-.settings-button{
+.settingsButton {
     
     height: 45px;
     float: right;
     padding-inline: 10px;
 }
 
-.menu-button{
+.menuButton{
     float: left;
     height: 45px;
     padding-inline: 10px;
 }
 
 
-.account-button{
+.accountButton{
     float: right;
     height: 45px;
     padding-right: 20px;
