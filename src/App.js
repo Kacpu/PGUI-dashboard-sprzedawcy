@@ -6,7 +6,7 @@ import Dashboard from "./containers/Dashboard/Dashboard";
 import Footer from './components/Footer/Footer';
 
 function App() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     const [chartWidgetOpen, setChartWidgetOpen] = useState(false);
     const [rankingWidgetOpen, setRankingWidgetOpen] = useState(false);
     const [opinionsWidgetOpen, setOpinionsWidgetOpen] = useState(false);

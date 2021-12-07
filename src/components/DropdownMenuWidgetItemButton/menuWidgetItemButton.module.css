@@ -3,7 +3,7 @@
     flex-direction: row;
     padding: 0 20px 0 10px;
     align-items: center;
-    background: #D5C1FF;
+    background: var(--theme-dropdownmenu-background);
     cursor: pointer;
 
     flex: none;
@@ -11,7 +11,7 @@
 }
 
 .container:hover {
-    background: #AE9BD8;
+    background: var(--theme-icon-hover)
 }
 
 .imgContainer {
@@ -20,10 +20,16 @@
     flex: none;
 }
 
+.imgIcon{
+    width:30px;
+    height:30px;
+    filter: invert(var(--theme-icon-filter-invert));
+}
+
 .label {
     font-size: 16px;
     line-height: 1;
-
+    color: var(--theme-userlabel-color);
     flex: none;
     margin-left: 16px;
 }
@@ -33,5 +39,5 @@
 }
 
 .open {
-    background-color: #E4D8FF;
+    background-color: var(--theme-listitem-background)
 }
