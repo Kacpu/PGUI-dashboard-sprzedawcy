@@ -4,42 +4,50 @@ import { Suspense, useState } from 'react';
 import NavigationHeader from "./components/NavigationHeader/NavigationHeader";
 import Dashboard from "./containers/Dashboard/Dashboard";
 import Footer from './components/Footer/Footer';
-import TranslationHanlder from './translation/TranslationHandler';
 import "./translation/i18n";
 import { useTranslation } from "react-i18next";
 
 function App() {
-  const [theme, setTheme] = useState('dark');
-  const [chartWidgetOpen, setChartWidgetOpen] = useState(false);
-  const [rankingWidgetOpen, setRankingWidgetOpen] = useState(false);
-  const [opinionsWidgetOpen, setOpinionsWidgetOpen] = useState(false);
-  const [accounts, setAccounts] = useState();
+    const [theme, setTheme] = useState('light');
+    const [chartWidgetOpen, setChartWidgetOpen] = useState(false);
+    const [rankingWidgetOpen, setRankingWidgetOpen] = useState(false);
+    const [opinionsWidgetOpen, setOpinionsWidgetOpen] = useState(false);
+    const [accounts, setAccounts] = useState();
+    const { i18n } = useTranslation();
+    const [language, setLanguage] = useState("eng");
 
-  function getUsers() {
+    function getUsers() {
 
-  }
+    }
 
-  function manageChartWidget() {
-    setChartWidgetOpen(!chartWidgetOpen);
-  }
+    function changeThem(){
+        setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+    }
 
-  function manageOpinionsWidget() {
-    setOpinionsWidgetOpen(!opinionsWidgetOpen);
-  }
+    function changeToPolish () {
+        setLanguage("pol");
+        i18n.changeLanguage("pol");
+    }
 
-  function manageRankingWidget() {
-    setRankingWidgetOpen(!rankingWidgetOpen);
-  }
+    function changeToEnglish () {
+        setLanguage("eng");
+        i18n.changeLanguage("eng");
+    }
 
-  // Tłumaczenie
-  const { i18n } = useTranslation();
-  const [language, setLanguage] = useState("id");
+    function manageChartWidget() {
+        setChartWidgetOpen((prev) => !prev);
+    }
 
+    function manageOpinionsWidget() {
+        setOpinionsWidgetOpen((prev) => !prev);
+    }
 
+    function manageRankingWidget() {
+        setRankingWidgetOpen((prev) => !prev);
+    }
 
-// nie jestem pewien suspense
   return (
-    <Suspense fallback="loading"> 
+    <Suspense fallback="loading">
       <div className={`App ${theme}`}>
         <div className="content-wrap">
           <NavigationHeader
@@ -49,8 +57,9 @@ function App() {
             manageChartWidget={manageChartWidget}
             manageOpinionsWidget={manageOpinionsWidget}
             manageRankingWidget={manageRankingWidget}
-            // changeToPolish={changeToPolish}
-            // changeToEnglish={changeToEnglish}
+            changeThem={changeThem}
+            changeToPolish={changeToPolish}
+            changeToEnglish={changeToEnglish}
           />
           <Dashboard
             chartWidgetOpen={chartWidgetOpen}
@@ -60,7 +69,6 @@ function App() {
             manageOpinionsWidget={manageOpinionsWidget}
             manageRankingWidget={manageRankingWidget}
           />
-          <TranslationHanlder/>
         </div>
         <Footer />
       </div>

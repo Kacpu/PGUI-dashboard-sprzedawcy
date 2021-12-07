@@ -67,10 +67,21 @@ class NavigationHeader extends Component {
         }));
     }
 
-    onCloseMenu = (e) => {
-        console.log(e.target)
+    onWidgetMenuClickOutside = () => {
         this.setState({
+            isWidgetMenuOpen: false
+        });
+    }
 
+    onManageUserMenuClickOutside = () => {
+        this.setState({
+            isManageUserMenuOpen: false
+        });
+    }
+
+    onSettingsMenuClickOutside = () => {
+        this.setState({
+            isSettingsMenuOpen: false
         });
     }
 
@@ -165,19 +176,21 @@ class NavigationHeader extends Component {
                         functionalIcon={polishIcon}
                         name={t("polish")}
                         onClick={this.props.changeToPolish}
+                        type={"language"}
                         
                     />,
                     <ListItemButton
                         functionalIcon={usaIcon}
                         name={t("english")}
                         onClick={this.props.changeToEnglish}
+                        type={"language"}
                     />
                 ]}
             />,
             <DropdownMenuItemButton
                 functionalIcon={modeIcon}
                 name={t("darkMode")}
-                lastItem={<Switch />}
+                lastItem={<Switch onClick={this.props.changeThem}/>}
             />
         ]
 
@@ -194,7 +207,7 @@ class NavigationHeader extends Component {
                     isOpen={this.state.isWidgetMenuOpen}
                     content={widgetMenuButtons}
                     position={styles.rightPosition}
-                    onBlur={this.onCloseMenu}
+                    onClickOutside={this.onWidgetMenuClickOutside}
                 />
                 <DropdownMenu
                     dropButton={
@@ -206,7 +219,7 @@ class NavigationHeader extends Component {
                     isOpen={this.state.isManageUserMenuOpen}
                     content={userManageButtons}
                     contentPosition={styles.contentToRightEdge}
-                    onBlur={this.onCloseMenu}
+                    onClickOutside={this.onManageUserMenuClickOutside}
                 />
                 <DropdownMenu
                     dropButton={
@@ -219,7 +232,7 @@ class NavigationHeader extends Component {
                     isOpen={this.state.isSettingsMenuOpen}
                     content={settingsButtons}
                     contentPosition={styles.contentToRightEdge}
-                    onBlur={this.onCloseMenu}
+                    onClickOutside={this.onSettingsMenuClickOutside}
                 />
             </div>
         );

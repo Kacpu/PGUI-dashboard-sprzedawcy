@@ -1,11 +1,10 @@
 import './switch.css'
 
-export default function Switch() {
-
+export default function Switch(props) {
     return (
-        <label class="switch">
-            <input type="checkbox" />
-            <span class ="slider"></span>
+        <label className="switch">
+            <input type="checkbox" onClick={props.onClick}/>
+            <span className ="slider"/>
         </label>
     );
 }
