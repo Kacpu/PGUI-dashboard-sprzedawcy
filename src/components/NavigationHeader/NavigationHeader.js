@@ -18,6 +18,10 @@ import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import {Component} from "react";
 import DropdownMenuList from "../DropdownMenuList/DropdownMenuList";
 import Switch from "../../elements/Switch/Switch";
+import MenuWidgetItemButton from "../DropdownMenuWidgetItemButton/MenuWidgetItemButton";
+import chartWidgetIcon from "../../assets/icons/chart-widget.png";
+import rankingWidgetIcon from "../../assets/icons/ranking-icon.png";
+import opinionsWidgetIcon from "../../assets/icons/ratings-widget-icon.png";
 
 class NavigationHeader extends Component {
     constructor(props) {
@@ -61,15 +65,35 @@ class NavigationHeader extends Component {
         }));
     }
 
-    onCloseMenu = () => {
+    onCloseMenu = (e) => {
+        console.log(e.target)
         this.setState({
 
         });
     }
 
-
-
     render() {
+        const widgetMenuButtons = [
+            <MenuWidgetItemButton
+                widgetIcon={chartWidgetIcon}
+                widgetName={"Sales Chart"}
+                isWidgetOpen={this.props.chartWidgetOpen}
+                onClick={this.props.manageChartWidget}
+            />,
+            <MenuWidgetItemButton
+                widgetIcon={opinionsWidgetIcon}
+                widgetName={"Last Opinions"}
+                isWidgetOpen={this.props.opinionWidgetOpen}
+                onClick={this.props.manageOpinionsWidget}
+            />,
+            <MenuWidgetItemButton
+                widgetIcon={rankingWidgetIcon}
+                widgetName={"Offers Ranking"}
+                isWidgetOpen={this.props.rankingWidgetOpen}
+                onClick={this.props.manageRankingWidget}
+            />
+        ];
+
         const userManageButtons = [
             <DropdownMenuList
                 isOpen={this.state.isUsersListOpen}
@@ -159,7 +183,7 @@ class NavigationHeader extends Component {
                         />
                     }
                     isOpen={this.state.isWidgetMenuOpen}
-                    content={userManageButtons}
+                    content={widgetMenuButtons}
                     position={styles.rightPosition}
                     onBlur={this.onCloseMenu}
                 />

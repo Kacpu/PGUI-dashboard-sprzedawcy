@@ -26,6 +26,7 @@
     padding-top: 0.2rem;
     opacity: 50%;
     filter: invert(var(--theme-icon-filter-invert));
+    cursor: pointer;
 }
 
 .closeButton:hover{

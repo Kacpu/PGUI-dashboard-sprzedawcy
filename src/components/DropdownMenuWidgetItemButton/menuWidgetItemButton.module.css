@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 20px 0 10px;
+    align-items: center;
+    background: #D5C1FF;
+    cursor: pointer;
+
+    flex: none;
+    align-self: stretch;
+}
+
+.container:hover {
+    background: #AE9BD8;
+}
+
+.imgContainer {
+    padding: 8px;
+
+    flex: none;
+}
+
+.label {
+    font-size: 16px;
+    line-height: 1;
+
+    flex: none;
+    margin-left: 16px;
+}
+
+.lastItem {
+    margin-left: auto;
+}
+
+.open {
+    background-color: #E4D8FF;
+}

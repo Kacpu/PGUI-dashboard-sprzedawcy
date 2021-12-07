@@ -1,6 +1,6 @@
 import WidgetFrame from "../../elements/WidgetFrame/WidgetFrame";
 import styles from "./dashboard.module.css"
-function Dashboard() {
+function Dashboard(props) {
 
   // let WidgetArray = [
   //   { id: 1, widget: <WidgetFrame OnCloseButton={OnCloseButton} /> },
@@ -16,15 +16,22 @@ function Dashboard() {
 
   return (
     <div className={styles.dashboardDiv}>
-      <WidgetFrame
-        WidgetName={"Sales Chart"}
-        OnCloseButton={OnCloseButton} />
-      <WidgetFrame
-        WidgetName={"Bestsellers"}
-        OnCloseButton={OnCloseButton} />
-      <WidgetFrame
-        WidgetName={"Newest Opions"}
-        OnCloseButton={OnCloseButton} />
+        {props.chartWidgetOpen &&
+            <WidgetFrame
+                WidgetName={"Sales Chart"}
+                OnCloseButton={props.manageChartWidget}
+            />
+        }
+        {props.rankingWidgetOpen &&
+            <WidgetFrame
+                WidgetName={"Bestsellers"}
+                OnCloseButton={props.manageRankingWidget} />
+        }
+        {props.opinionWidgetOpen &&
+            <WidgetFrame
+                WidgetName={"Newest Opinions"}
+                OnCloseButton={props.manageOpinionsWidget} />
+        }
     </div>
   );
 }
