@@ -77,7 +77,7 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
                         name={"Change account"}
-                        lastItem={<img src={expandIcon} alt="expand" width="30" height="30"/>}
+                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
                         onClick={this.onUsersListClick}
                     />
                 }
@@ -85,7 +85,7 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
                         name={"Change account"}
-                        lastItem={<img src={collapseIcon} alt="collapse" width="30" height="30"/>}
+                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
                         onClick={this.onUsersListClick}
                     />
                 }
@@ -118,7 +118,7 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
                         name={"Change language"}
-                        lastItem={<img src={expandIcon} alt="expand" width="30" height="30"/>}
+                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
                 }
@@ -126,7 +126,7 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
                         name={"Change language"}
-                        lastItem={<img src={collapseIcon} alt="collapse" width="30" height="30"/>}
+                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
                 }
@@ -155,7 +155,7 @@ class NavigationHeader extends Component {
                         <NavHeaderButton
                             style={styles.widgetMenuButton}
                             onClick={this.onWidgetMenuMenuClick}
-                            icon={<img src={WidgetMenuPng} alt="widget menu" className={styles.imgIcon}/>}
+                            icon={<img src={WidgetMenuPng}  alt="widget menu" className={styles.imgIcon}/>}
                         />
                     }
                     isOpen={this.state.isWidgetMenuOpen}

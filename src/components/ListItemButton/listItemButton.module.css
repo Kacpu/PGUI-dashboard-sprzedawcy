@@ -3,7 +3,7 @@
     flex-direction: row;
     padding: 0 20px 0 55px;
     align-items: center;
-    background: #EFE8FD;
+    background: var(--theme-listitem-background);
     height: 46px;
     cursor: pointer;
 
@@ -12,13 +12,17 @@
 }
 
 .container:hover {
-    background: #AE9BD8;
+    background: var(--theme-icon-hover);
 }
 
 .label {
     font-size: 16px;
     line-height: 1;
-
+    color: var(--theme-userlabel-color);
     flex: none;
     margin-left: 16px;
+}
+
+.imgIcon{
+    filter: invert(var(--theme-icon-filter-invert));
 }

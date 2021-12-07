@@ -4,7 +4,7 @@ function DropdownMenuItemButton(props){
     return(
         <div className={styles.container} onClick={props.onClick}>
             <div className={styles.imgContainer}>
-                <img src={props.functionalIcon} alt={props.name} width="30" height="30"/>
+                <img src={props.functionalIcon} alt={props.name} className={styles.imgIcon}/>
             </div>
             <div className={styles.label}>
                 {props.name}

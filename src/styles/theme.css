@@ -7,6 +7,9 @@
     --theme-icon-hover: #9483C7;
     --theme-icon-click: #8072aa;
     --theme-widget-background:#d8cfdf;
+    --theme-dropdownmenu-background: #D5C1FF;
+    /* --theme-listitem-background:#EFE8FD; */
+    --theme-listitem-background:#e4d6ff;
 }
 
 .dark {
@@ -18,4 +21,6 @@
     --theme-icon-hover: #4d4d4d;
     --theme-icon-click: #383838;
     --theme-widget-background: #5A585C;
+    --theme-dropdownmenu-background: #5B5B5B;
+    --theme-listitem-background:#6E6D6F;
 }

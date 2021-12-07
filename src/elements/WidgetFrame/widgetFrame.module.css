@@ -12,7 +12,8 @@
     display: flex;
     padding-bottom: 0.3rem;
     align-self: flex-start;
-    color:#8C8C8C;
+    color: var(--theme-userlabel-color);
+    opacity: 50%;
 }
 
 .closeButton{
