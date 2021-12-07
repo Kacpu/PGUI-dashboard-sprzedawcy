@@ -38,7 +38,6 @@
   height: var(--slider-width);
   width: var(--slider-width);
   left: 4px;
-  right: 4px;
   bottom: 4px;
   top: 4px;
   border-radius: 20px;
@@ -52,5 +51,5 @@ input:checked+.slider:before {
 }
 
 input:checked+.slider:before {
-  transform: translateX(calc(var(--width) - var(--slider-width)));
+  transform: translateX(calc(var(--width) - var(--slider-width) - 8px));
 }
