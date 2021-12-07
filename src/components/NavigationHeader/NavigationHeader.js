@@ -5,6 +5,10 @@ import WidgetMenuPng from '../../assets/icons/hamburger-menu.png';
 import SettingsPng from '../../assets/icons/settings-icon.png'
 import DropdownMenuItemButton from "../DropdownMenuItemButton/DropdownMenuItemButton";
 import changeAccountIcon from "../../assets/icons/change-user.png";
+import languageIcon from "../../assets/icons/language.png";
+import polishIcon from "../../assets/icons/poland-icon.png";
+import usaIcon from "../../assets/icons/usa-icon.png";
+import modeIcon from "../../assets/icons/dark-mode.png";
 import expandIcon from "../../assets/icons/expand-icon.png";
 import collapseIcon from "../../assets/icons/collapse-icon.png";
 import ListItemButton from "../ListItemButton/ListItemButton";
@@ -13,6 +17,7 @@ import logoutIcon from "../../assets/icons/logout.png";
 import DropdownMenu from "../DropdownMenu/DropdownMenu";
 import {Component} from "react";
 import DropdownMenuList from "../DropdownMenuList/DropdownMenuList";
+import Switch from "../../elements/Switch/Switch";
 
 class NavigationHeader extends Component {
     constructor(props) {
@@ -106,6 +111,43 @@ class NavigationHeader extends Component {
             />
         ]
 
+        const settingsButtons = [
+            <DropdownMenuList
+                isOpen={this.state.isLanguagesListOpen}
+                expandButton={
+                    <DropdownMenuItemButton
+                        functionalIcon={languageIcon}
+                        name={"Change language"}
+                        lastItem={<img src={expandIcon} alt="expand" width="30" height="30"/>}
+                        onClick={this.onLanguagesListClick}
+                    />
+                }
+                collapseButton={
+                    <DropdownMenuItemButton
+                        functionalIcon={languageIcon}
+                        name={"Change language"}
+                        lastItem={<img src={collapseIcon} alt="collapse" width="30" height="30"/>}
+                        onClick={this.onLanguagesListClick}
+                    />
+                }
+                content={[
+                    <ListItemButton
+                        functionalIcon={polishIcon}
+                        name={"Polish"}
+                    />,
+                    <ListItemButton
+                        functionalIcon={usaIcon}
+                        name={"English"}
+                    />
+                ]}
+            />,
+            <DropdownMenuItemButton
+                functionalIcon={modeIcon}
+                name={"Dark mode"}
+                lastItem={<Switch />}
+            />
+        ]
+
         return (
             <div className={styles.navHeader}>
                 <DropdownMenu
@@ -142,7 +184,7 @@ class NavigationHeader extends Component {
                         />
                     }
                     isOpen={this.state.isSettingsMenuOpen}
-                    content={userManageButtons}
+                    content={settingsButtons}
                     contentPosition={styles.contentToRightEdge}
                     onBlur={this.onCloseMenu}
                 />

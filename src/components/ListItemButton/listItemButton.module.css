@@ -5,6 +5,7 @@
     align-items: center;
     background: #EFE8FD;
     height: 46px;
+    cursor: pointer;
 
     flex: none;
     align-self: stretch;
