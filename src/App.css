@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   background-color: var(--theme-page-background);
+  position: relative;
+  min-height: 100vh;
 }
 
 .App-logo {
@@ -41,4 +43,8 @@
 img {
   display: block;
   pointer-events: none;
+}
+
+.content-wrap{
+  padding-bottom: 2rem;
 }

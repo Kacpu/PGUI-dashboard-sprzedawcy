@@ -1,5 +1,8 @@
 .authors-footer{
-    float:center;
-    padding-bottom: 1rem;
-    color: var(--theme-page-text)
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height: 2rem;
+    color: var(--theme-page-text);
+    background-color: var(--theme-page-background);
 }

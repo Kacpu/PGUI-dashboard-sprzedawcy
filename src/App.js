@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className={`App ${theme}`}>
+      <div className="content-wrap">
       <NavigationHeader
           chartWidgetOpen={chartWidgetOpen}
           rankingWidgetOpen={rankingWidgetOpen}
@@ -46,6 +47,7 @@ function App() {
           manageOpinionsWidget={manageOpinionsWidget}
           manageRankingWidget={manageRankingWidget}
       />
+      </div>
       <Footer />
     </div>
   );
