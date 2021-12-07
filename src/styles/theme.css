@@ -1,0 +1,21 @@
+.light {
+    --theme-header-color: #AD90FF;
+    --theme-page-background: #FCF8FF;
+    --theme-page-text: #111;
+    --theme-userlabel-color: #111;
+    --theme-icon-filter-invert: 0%;
+    --theme-icon-hover: #9483C7;
+    --theme-icon-click: #8072aa;
+    --theme-widget-background:#d8cfdf;
+}
+
+.dark {
+    --theme-header-color: #676767;
+    --theme-page-background: #454545;
+    --theme-page-text: rgb(170, 170, 170);
+    --theme-userlabel-color: rgb(238, 238, 238);
+    --theme-icon-filter-invert: 90%;
+    --theme-icon-hover: #4d4d4d;
+    --theme-icon-click: #383838;
+    --theme-widget-background: #5A585C;
+}

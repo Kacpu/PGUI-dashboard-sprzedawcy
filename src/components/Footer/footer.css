@@ -1,4 +1,5 @@
 .authors-footer{
     float:center;
     padding-bottom: 1rem;
+    color: var(--theme-page-text)
 }

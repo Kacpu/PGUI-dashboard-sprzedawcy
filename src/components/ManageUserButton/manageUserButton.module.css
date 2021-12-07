@@ -4,6 +4,7 @@
 
 .userLabel{
     float: right;
+    color: var(--theme-userlabel-color);
     vertical-align: bottom;
     padding-left: 10px;
     font-weight: bold;
@@ -17,6 +18,7 @@
     pointer-events: none;
     height: 38px;
     width: 38px;
+    filter: invert(var(--theme-icon-filter-invert));
 }
 .accountBtn{
     height: 45px;
@@ -30,11 +32,11 @@
 }
 
 .accountBtn:hover{
-    background-color: #9483C7;
+    background-color: var(--theme-icon-hover);
 }
 
 .accountBtn:active{
-    background-color: #8072aa;
+    background-color:var(--theme-icon-click);
 }
 
 

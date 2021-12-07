@@ -1,6 +1,6 @@
 
 .widgetDiv{
-    background-color: #d8cfdf;
+    background-color: var(--theme-widget-background);
     height: 30rem;
     padding: 1rem;
     border-radius: 15px;
@@ -22,11 +22,12 @@
     top:0;
     right:0;
     padding-top: 0.2rem;
-    opacity: 30%;
+    opacity: 50%;
+    filter: invert(var(--theme-icon-filter-invert));
 }
 
 .closeButton:hover{
-    opacity: 50%;
+    opacity: 70%;
 }
 
 .closeButton:active{

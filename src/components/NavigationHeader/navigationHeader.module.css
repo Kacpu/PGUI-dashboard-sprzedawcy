@@ -2,8 +2,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-
-    background-color: #AD90FF;
+    background-color: var(--theme-header-color);
 }
 
 .lab{
@@ -14,6 +13,7 @@
     height: 38px;
     width: 38px;
     pointer-events: none;
+    filter: invert(var(--theme-icon-filter-invert));
 }
 
 .settingsButton {
