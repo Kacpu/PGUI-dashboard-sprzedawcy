@@ -10,13 +10,20 @@ class ManageUserButton extends React.Component{
         this.state = {isMenuOpen: false};
     }
 
+    handleClick = () => {
+        this.setState((prev) => ({
+            isMenuOpen: !prev.isMenuOpen
+        }));
+    }
+
     render() {
         return (
-            <div>
-                <button className = {styles.accountBtn + ' ' + this.props.style}>
+            <div className={styles.dropdown}>
+                <button className = {styles.accountBtn} onClick={this.handleClick}>
                     <img className={styles.imgIcon} src={UserPng}  alt={"user"}/>
                     <label className={styles.userLabel}>{this.props.username}</label>
                 </button>
+                {this.state.isMenuOpen ? <DropdownMenu /> : null}
             </div>
         );
     }

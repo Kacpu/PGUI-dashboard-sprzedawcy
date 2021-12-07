@@ -20,18 +20,14 @@ function NavigationHeader() {
                 onClick={() => console.log("menu")}
                 icon={<img src={MenuPng} alt="menu" className={styles.imgIcon}/>}
             />
-
+            <ManageUserButton
+                username={"Name Surname"}
+            />
             <NavHeaderButton
                 style={styles.settingsButton}
                 onClick={() => console.log("settings")}
                 icon={<img src={SettingsPng} alt="user account" className={styles.imgIcon}/>}
             />
-
-            <ManageUserButton
-                style={styles.accountButton}
-                username={"Name Surname"}
-            />
-
         </div>
     );
 }

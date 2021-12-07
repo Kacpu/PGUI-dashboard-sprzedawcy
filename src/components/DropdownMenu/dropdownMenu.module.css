@@ -1,7 +1,8 @@
 .container {
+    position: absolute;
     display: flex;
     flex-direction: column;
     width: 300px;
     align-items: flex-start;
-    padding: 0;
+    right: 0;
 }

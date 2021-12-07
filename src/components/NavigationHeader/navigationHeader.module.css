@@ -1,6 +1,9 @@
 .navHeader{
-    overflow: hidden;
-    background-color: #AD90FF; 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    background-color: #AD90FF;
 }
 
 .lab{
@@ -8,7 +11,6 @@
 }
 
 .imgIcon{
-    display:block;
     height: 38px;
     width: 38px;
     pointer-events: none;
@@ -16,21 +18,12 @@
 
 .settingsButton {
     height: 45px;
-    float: right;
     padding-inline: 10px;
 }
 
 .menuButton{
-    float: left;
     height: 45px;
     padding-inline: 10px;
+    margin-right: auto;
 }
-
-.accountButton{
-    float: right;
-    height: 45px;
-    padding-right: 20px;
-    padding-left: 20px;
-}
-
 
