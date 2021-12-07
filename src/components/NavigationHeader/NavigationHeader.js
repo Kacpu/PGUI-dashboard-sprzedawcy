@@ -22,6 +22,7 @@ import MenuWidgetItemButton from "../DropdownMenuWidgetItemButton/MenuWidgetItem
 import chartWidgetIcon from "../../assets/icons/chart-widget.png";
 import rankingWidgetIcon from "../../assets/icons/ranking-icon.png";
 import opinionsWidgetIcon from "../../assets/icons/ratings-widget-icon.png";
+import { useTranslation, withTranslation } from "react-i18next";
 
 class NavigationHeader extends Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class NavigationHeader extends Component {
             isLanguagesListOpen: false
         };
     }
+
 
     onWidgetMenuMenuClick = () => {
         this.setState((prev) => ({
@@ -72,23 +74,27 @@ class NavigationHeader extends Component {
         });
     }
 
+   
+
     render() {
+        const {t} = this.props;
+
         const widgetMenuButtons = [
             <MenuWidgetItemButton
                 widgetIcon={chartWidgetIcon}
-                widgetName={"Sales Chart"}
+                widgetName={t("salesChartMenu")}
                 isWidgetOpen={this.props.chartWidgetOpen}
                 onClick={this.props.manageChartWidget}
             />,
             <MenuWidgetItemButton
                 widgetIcon={opinionsWidgetIcon}
-                widgetName={"Last Opinions"}
+                widgetName={t("opinionsMenu")}
                 isWidgetOpen={this.props.opinionWidgetOpen}
                 onClick={this.props.manageOpinionsWidget}
             />,
             <MenuWidgetItemButton
                 widgetIcon={rankingWidgetIcon}
-                widgetName={"Offers Ranking"}
+                widgetName={t("offersMenu")}
                 isWidgetOpen={this.props.rankingWidgetOpen}
                 onClick={this.props.manageRankingWidget}
             />
@@ -100,7 +106,7 @@ class NavigationHeader extends Component {
                 expandButton={
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
-                        name={"Change account"}
+                        name={t("changeAccount")}
                         lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
                         onClick={this.onUsersListClick}
                     />
@@ -108,7 +114,7 @@ class NavigationHeader extends Component {
                 collapseButton={
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
-                        name={"Change account"}
+                        name={t("changeAccount")}
                         lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
                         onClick={this.onUsersListClick}
                     />
@@ -130,7 +136,7 @@ class NavigationHeader extends Component {
             />,
             <DropdownMenuItemButton
                 functionalIcon={logoutIcon}
-                name={"Logout"}
+                name={t("logout")}
                 lastItem={null}
             />
         ]
@@ -141,7 +147,7 @@ class NavigationHeader extends Component {
                 expandButton={
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
-                        name={"Change language"}
+                        name={t("changeLang")}
                         lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
@@ -149,7 +155,7 @@ class NavigationHeader extends Component {
                 collapseButton={
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
-                        name={"Change language"}
+                        name={t("changeLang")}
                         lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
@@ -157,17 +163,20 @@ class NavigationHeader extends Component {
                 content={[
                     <ListItemButton
                         functionalIcon={polishIcon}
-                        name={"Polish"}
+                        name={t("polish")}
+                        onClick={this.props.changeToPolish}
+                        
                     />,
                     <ListItemButton
                         functionalIcon={usaIcon}
-                        name={"English"}
+                        name={t("english")}
+                        onClick={this.props.changeToEnglish}
                     />
                 ]}
             />,
             <DropdownMenuItemButton
                 functionalIcon={modeIcon}
-                name={"Dark mode"}
+                name={t("darkMode")}
                 lastItem={<Switch />}
             />
         ]
@@ -217,4 +226,4 @@ class NavigationHeader extends Component {
     }
 }
 
-export default NavigationHeader;
+export default withTranslation()(NavigationHeader);

@@ -1,5 +1,6 @@
 import WidgetFrame from "../../elements/WidgetFrame/WidgetFrame";
-import styles from "./dashboard.module.css"
+import styles from "./dashboard.module.css";
+import { useTranslation } from "react-i18next";
 function Dashboard(props) {
 
   // let WidgetArray = [
@@ -14,22 +15,24 @@ function Dashboard(props) {
     console.log("close widget");
   }
 
+  const {t, i18n} = useTranslation();
+
   return (
     <div className={styles.dashboardDiv}>
         {props.chartWidgetOpen &&
             <WidgetFrame
-                WidgetName={"Sales Chart"}
+                WidgetName={t("salesChartMenu")}
                 OnCloseButton={props.manageChartWidget}
             />
         }
         {props.rankingWidgetOpen &&
             <WidgetFrame
-                WidgetName={"Bestsellers"}
+                WidgetName={t("offersMenu")}
                 OnCloseButton={props.manageRankingWidget} />
         }
         {props.opinionWidgetOpen &&
             <WidgetFrame
-                WidgetName={"Newest Opinions"}
+                WidgetName={t("opinionsMenu")}
                 OnCloseButton={props.manageOpinionsWidget} />
         }
     </div>

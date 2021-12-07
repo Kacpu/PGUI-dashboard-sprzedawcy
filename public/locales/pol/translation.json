@@ -1,0 +1,12 @@
+{
+    "footer":"@2021 Bartłomiej Kopyść i Kacper Tarłowski",
+    "salesChartMenu": "Wykres sprzedaży",
+    "opinionsMenu": "Ostatnie opinie",
+    "offersMenu":"Ranking ofert",
+    "changeAccount":"Zmień konto",
+    "logout":"Wyloguj",
+    "changeLang": "Zmień język",
+    "polish":"Polski",
+    "english":"Angielski",
+    "darkMode": "Tryb ciemny"
+}
