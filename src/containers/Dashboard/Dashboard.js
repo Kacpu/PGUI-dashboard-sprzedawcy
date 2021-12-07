@@ -17,10 +17,13 @@ function Dashboard() {
   return (
     <div className={styles.dashboardDiv}>
       <WidgetFrame
+        WidgetName={"Sales Chart"}
         OnCloseButton={OnCloseButton} />
       <WidgetFrame
+        WidgetName={"Bestsellers"}
         OnCloseButton={OnCloseButton} />
       <WidgetFrame
+        WidgetName={"Newest Opions"}
         OnCloseButton={OnCloseButton} />
     </div>
   );
