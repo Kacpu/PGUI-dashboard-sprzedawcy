@@ -1,12 +1,6 @@
-.dropdown {
-    position: relative;
-}
-
 .contentContainer {
-    position: absolute;
     display: flex;
     flex-direction: column;
     width: 300px;
     align-items: flex-start;
-    z-index: 2;
 }

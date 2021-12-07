@@ -21,9 +21,15 @@
     padding-inline: 10px;
 }
 
-.menuButton{
+.widgetMenuButton {
     height: 45px;
     padding-inline: 10px;
+}
+
+.rightPosition {
     margin-right: auto;
 }
 
+.contentToRightEdge {
+    right: 0;
+}
