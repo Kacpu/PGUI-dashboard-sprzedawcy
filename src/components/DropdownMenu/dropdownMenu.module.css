@@ -5,4 +5,5 @@
     width: 300px;
     align-items: flex-start;
     right: 0;
+    z-index: 2;
 }
