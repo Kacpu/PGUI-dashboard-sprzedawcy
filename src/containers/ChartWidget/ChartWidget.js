@@ -54,7 +54,7 @@ export default function ChartWidget(props) {
         />
     );
 
-    const timePeriodButtons = measures.filter(t => t !== timePeriod).map((t) =>
+    const timePeriodButtons = timePeriods.filter(t => t !== timePeriod).map((t) =>
         <DropdownButton
             key={t}
             name={t}
