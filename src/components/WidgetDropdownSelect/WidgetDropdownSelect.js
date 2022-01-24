@@ -25,7 +25,7 @@ export default function WidgetDropdownSelect(props) {
     const ref = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (props.isMenuOpen &&  ref.current && !ref.current.contains(event.target))
+        if (props.isMenuOpen && ref.current && !ref.current.contains(event.target))
         {
             props.onClickOutside && props.onClickOutside();
         }
@@ -38,14 +38,18 @@ export default function WidgetDropdownSelect(props) {
         };
     });
     return (
-        <DropdownMenuList
-            dropdownRef={ref}
-            isOpen={props.isMenuOpen}
-            expandButton={expandButton}
-            collapseButton={collapseButton}
-            content={props.content}
-            mainButtonStyle={style.mainButton}
-            contentStyle={style.dropdownContent}
-        />
+        <div className={style.container}>
+            <DropdownMenuList
+                dropdownRef={ref}
+                isOpen={props.isMenuOpen}
+                expandButton={expandButton}
+                collapseButton={collapseButton}
+                content={props.content}
+                mainButtonStyle={style.mainButton}
+                contentStyle={style.dropdownContent}
+                width={props.width}
+            />
+        </div>
+
     );
 }

@@ -1,5 +1,6 @@
 .mainButton {
     position: relative;
+    margin-right: 24px;
 }
 
 .dropdownContent {
@@ -9,3 +10,4 @@
     align-items: flex-start;
     z-index: 20;
 }
+

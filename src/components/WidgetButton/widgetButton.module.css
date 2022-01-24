@@ -1,34 +1,27 @@
 .container {
     height: 32px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 2px 5px 2px 15px;
-    margin-top: 1px;
+    padding: 2px 5px;
     cursor: pointer;
 
     background: #EFE2FF;
     border-radius: 6px;
-
-    align-self: stretch;
 }
 
 .container:hover {
     background:var(--theme-icon-hover);
 }
 
-.lastItem {
-    margin-left: auto;
-}
-
 .imgIcon{
     filter: invert(var(--theme-icon-filter-invert));
     width: 28px;
     height: 28px;
+    margin: 0px 5px;
 }
 
 .label {
     line-height: 1;
     color: var(--theme-userlabel-color);
+    margin: 0px 5px;
 }
-

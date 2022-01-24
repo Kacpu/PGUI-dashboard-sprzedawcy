@@ -4,6 +4,9 @@ import {t} from "i18next";
 import DropdownButton from "../../components/WidgetDropdownSelect/DropdownButton/DropdownButton";
 import WidgetDropdownSelect from "../../components/WidgetDropdownSelect/WidgetDropdownSelect";
 import React, {useState} from "react";
+import WidgetButton from "../../components/WidgetButton/WidgetButton";
+import enterIcon from "../../assets/icons/enter-icon.png";
+
 
 export default function OpinionsWidget(props) {
     const categories = ['All', 'Positive', 'Negative']
@@ -23,6 +26,10 @@ export default function OpinionsWidget(props) {
         setCategoryMenuOpen(false);
     }
 
+    const onClickGoToOpinionsButton = () => {
+
+    }
+
     const categoryButtons = categories.filter(c => c !== category).map((c) =>
         <DropdownButton
             key={c}
@@ -38,6 +45,12 @@ export default function OpinionsWidget(props) {
             isMenuOpen={isCategoryMenuOpen}
             onMenuClick={onMenuClick}
             onClickOutside={onClickOutside}
+            width={styles.width120}
+        />
+        <WidgetButton
+            onCLick={onClickGoToOpinionsButton}
+            icon={enterIcon}
+            name={t("Go to opinions")}
         />
     </React.Fragment>;
 
