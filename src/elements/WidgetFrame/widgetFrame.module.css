@@ -43,6 +43,7 @@
 
 .nav {
     display: flex;
+    align-items: flex-end;
 }
 
 .content {

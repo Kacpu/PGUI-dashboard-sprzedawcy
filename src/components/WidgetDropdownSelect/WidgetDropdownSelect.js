@@ -39,6 +39,7 @@ export default function WidgetDropdownSelect(props) {
     });
     return (
         <div className={style.container}>
+            <div className={style.label}>{props.label}</div>
             <DropdownMenuList
                 dropdownRef={ref}
                 isOpen={props.isMenuOpen}
