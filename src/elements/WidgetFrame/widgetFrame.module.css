@@ -1,8 +1,7 @@
-
 .widgetDiv{
     background-color: var(--theme-widget-background);
     height: 30rem;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 15px;
     position: relative;
     z-index: 1;
@@ -23,7 +22,7 @@
     border: none;
     top:0;
     right:0;
-    padding-top: 0.2rem;
+    padding: 0.5rem;
     opacity: 50%;
     filter: invert(var(--theme-icon-filter-invert));
     cursor: pointer;
@@ -40,4 +39,12 @@
 .imgIcon{
     height: 20px;
     width: 20px;
+}
+
+.nav {
+    display: flex;
+}
+
+.content {
+    margin-top: 2rem;
 }

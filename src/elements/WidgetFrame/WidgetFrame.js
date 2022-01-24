@@ -1,5 +1,6 @@
 import styles from "./widgetFrame.module.css"
 import CloseButton from "../../assets/icons/close-icon.png"
+
 export default function WidgetFrame(props) {
     return (
         <div className={styles.widgetFrame}>
@@ -8,7 +9,12 @@ export default function WidgetFrame(props) {
                 <button className={styles.closeButton} onClick={props.OnCloseButton}>
                     <img src={CloseButton} className={styles.imgIcon} />
                 </button>
-                <text>PlaceForWidget</text>
+                <div className={styles.nav}>
+                    {props.WidgetNav}
+                </div>
+                <div className={styles.content}>
+                    {props.children}
+                </div>
             </div>
         </div>
     );
