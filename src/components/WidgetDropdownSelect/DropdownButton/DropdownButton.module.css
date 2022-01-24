@@ -1,0 +1,28 @@
+.container {
+    width: 140px;
+    height: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 5px 2px 15px;
+    margin-top: 1px;
+    cursor: pointer;
+
+    background: #EFE2FF;
+    border-radius: 6px;
+}
+
+.container:hover {
+    background:var(--theme-icon-hover);
+}
+
+.lastItem {
+    margin-left: auto;
+}
+
+.imgIcon{
+    filter: invert(var(--theme-icon-filter-invert));
+    width: 28px;
+    height: 28px;
+}
+

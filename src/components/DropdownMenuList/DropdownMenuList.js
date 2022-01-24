@@ -1,17 +1,14 @@
 import styles from "../DropdownMenuList/dropdownMenuList.module.css";
 
-function DropdownMenuList(props){
+export default function DropdownMenuList(props){
     return(
-        <div className={styles.contentContainer}>
-            {!props.isOpen && props.expandButton}
+        <div ref={props.dropdownRef} className={props.mainButtonStyle ? props.mainButtonStyle : styles.contentContainer}>
+            {props.isOpen ? props.collapseButton : props.expandButton}
             {props.isOpen && (
-                <div className={styles.contentContainer}>
-                    {props.collapseButton}
+                <div className={props.contentStyle ? props.contentStyle : styles.contentContainer}>
                     {props.content}
                 </div>
             )}
         </div>
     );
 }
-
-export default DropdownMenuList;
