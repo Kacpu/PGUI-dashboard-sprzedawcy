@@ -8,5 +8,21 @@
     "changeLang": "Change language",
     "polish":"Polish",
     "english":"English",
-    "darkMode": "Dark mode"
+    "darkMode": "Dark mode",
+    "Mon":"Mon",
+    "Tue":"Tue",
+    "Wed":"Wed",
+    "Thu":"Thu",
+    "Fri":"Fri",
+    "Sat":"Sat",
+    "Sun":"Sun",
+    "hey":"heYou",
+    "currentIncome": "Current Income",
+    "chartSpan": "Period",
+    "chartIncome": "Income [zł]",
+    "pastIncome": "Past Income",
+    "currentUnits": "Current units sold",
+    "chartUnits": "Units [pcs]",
+    "pastUnits": "Past units sold"
+
 }
