@@ -8,5 +8,20 @@
     "changeLang": "Zmień język",
     "polish":"Polski",
     "english":"Angielski",
-    "darkMode": "Tryb ciemny"
+    "darkMode": "Tryb ciemny",
+    "Mon":"Pon",
+    "Tue":"Wt",
+    "Wed":"Śr",
+    "Thu":"Czw",
+    "Fri":"Pt",
+    "Sat":"Sob",
+    "Sun":"Niedz",
+    "hey":"Siema",
+    "chartSpan": "Okres",
+    "chartIncome": "Przychód [zł]",
+    "currentIncome": "Obecny przychód",
+    "pastIncome": "Zeszły przychód",
+    "currentUnits": "Obecnie sprzedane szt.",
+    "chartUnits": "Sztuki [pcs]",
+    "pastUnits": "Zeszłe sprzedanye szt."
 }

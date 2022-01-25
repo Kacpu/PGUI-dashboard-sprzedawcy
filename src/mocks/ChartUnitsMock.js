@@ -1,102 +1,102 @@
 import {t} from "i18next";
 
-export const actualChartData=[
+export const actualChartDataUnit=[
     {
         day: "Mon",
-        income: 3000,
+        units: 10,
     },
     {
         day: "Tue",
-        income: 2100,
+        units: 61,
     },
     {
         day: "Wed",
-        income: 5100,
+        units: 112,
     },
     {
         day: "Thu",
-        income: 4300,
+        units: 45,
     },
     {
         day: "Fri",
-        income: 2600,
+        units: 63,
     },
     {
         day: "Sat",
-        income: 1600,
+        units: 74,
     },
     {
         day: "Sun",
-        income: 2100,
+        units: 53,
     },
 ];
 
-export const chartDataHour =[
+export const chartDataHourUnit =[
     {
         hour: "08:00",
-        income: 100,
+        units: 5,
     },
     {
         hour: "09:00",
-        income: 150,
+        units: 2,
     },
     {
         hour: "10:00",
-        income: 300,
+        units: 3,
     },
     {
         hour: "11:00",
-        income: 400,
+        units: 6,
     },
     {
         hour: "12:00",
-        income: 700,
+        units: 4,
     },
     {
         hour: "13:00",
-        income: 800,
+        units: 9,
     },
     {
         hour: "14:00",
-        income: 500,
+        units: 6,
     },
     {
         hour: "15:00",
-        income: 400,
+        units: 2,
     },
     {
         hour: "16:00",
-        income: 200,
+        units: 1,
     },
 ];
 
-export const pastChartData=[
+export const pastChartDataUnit=[
     {
         day: "Mon",
-        income: 1000,
+        units: 61,
     },
     {
         day: "Tue",
-        income: 2600,
+        units: 53,
     },
     {
         day: "Wed",
-        income: 700,
+        units: 43,
     },
     {
         day: "Thu",
-        income: 4300,
+        units: 21,
     },
     {
         day: "Fri",
-        income: 6100,
+        units: 68,
     },
     {
         day: "Sat",
-        income: 2600,
+        units: 14,
     },
     {
         day: "Sun",
-        income: 4320,
+        units: 93,
     },
 ];

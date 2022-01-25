@@ -9,5 +9,18 @@
 }
 
 .rechart-cartesian-grid-horizontal{
-    stroke:black;
+    stroke:red !important;
 }
+
+.svg.recharts-surface tspan {
+	font-size: 2rem !important;
+	color: red !important;
+	font-family:  Arial;
+}
+
+.xaxis{
+    
+}
+.recharts-wrapper .recharts-y-axis .recharts-cartesian-axis-tick text {
+    fill: black !important;
+  }

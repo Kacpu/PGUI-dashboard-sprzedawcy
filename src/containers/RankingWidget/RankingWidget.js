@@ -44,7 +44,7 @@ export default function RankingWidget(props) {
 
     return (
         <WidgetFrame WidgetName={t("offersMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
-            oferty
+            <h1>{t("hey")}</h1>
         </WidgetFrame>
     );
 }
