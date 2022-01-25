@@ -6,6 +6,7 @@ import WidgetDropdownSelect from "../../components/WidgetDropdownSelect/WidgetDr
 import WidgetButton from "../../components/WidgetButton/WidgetButton";
 import addIcon from "../../assets/icons/add.png";
 import styles from './chartWidget.module.css'
+import Chart from "../../components/Chart/Chart"
 
 export default function ChartWidget(props) {
     const measures = ['Turnover', 'Units sold']
@@ -88,7 +89,7 @@ export default function ChartWidget(props) {
 
     return (
         <WidgetFrame WidgetName={t("salesChartMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
-            ranking
+            <Chart></Chart>
         </WidgetFrame>
     );
 }
