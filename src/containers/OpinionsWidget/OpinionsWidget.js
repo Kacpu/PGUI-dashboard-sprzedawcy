@@ -46,6 +46,7 @@ export default function OpinionsWidget(props) {
             onMenuClick={onMenuClick}
             onClickOutside={onClickOutside}
             width={styles.width120}
+            label={"Category"}
         />
         <WidgetButton
             onCLick={onClickGoToOpinionsButton}

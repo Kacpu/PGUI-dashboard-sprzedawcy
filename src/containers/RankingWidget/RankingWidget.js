@@ -38,6 +38,7 @@ export default function RankingWidget(props) {
             onMenuClick={onMenuClick}
             onClickOutside={onClickOutside}
             width={style.width220}
+            label={"Display by"}
         />
     </React.Fragment>;
 

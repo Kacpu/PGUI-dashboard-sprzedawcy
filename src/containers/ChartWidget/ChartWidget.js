@@ -71,6 +71,7 @@ export default function ChartWidget(props) {
             onMenuClick={onMeasureMenuClick}
             onClickOutside={onMeasureMenuClickOutside}
             width={styles.width130}
+            label={"Measure"}
         />
         <WidgetDropdownSelect
             content={timePeriodButtons}
@@ -79,6 +80,7 @@ export default function ChartWidget(props) {
             onMenuClick={onTimePeriodMenuClick}
             onClickOutside={onTimePeriodMenuClickOutside}
             width={styles.width130}
+            label={"Time period"}
         />
         <WidgetButton
             onCLick={onClickAddPastPeriodData}
