@@ -3,7 +3,10 @@ import styles from './opinionsList.module.css'
 import React from "react";
 
 export default function OpinionsList(props) {
-    const opinions = props.opinions.slice(0, 5).map((o, index) =>
+    let opinions = props.category !== 0 ?
+        props.opinions.filter(o => o.rating === props.category) :  props.opinions
+
+    opinions = opinions.slice(0, 5).map((o, index) =>
         <React.Fragment>
             <Opinion
                 key={o.id}

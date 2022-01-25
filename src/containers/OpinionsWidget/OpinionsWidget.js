@@ -10,12 +10,12 @@ import OpinionsList from "../../components/OpinionsList/OpinionsList";
 import {opinions} from '../../mocks/OpinionMock'
 
 export default function OpinionsWidget(props) {
-    const categories = ['All', 'Positive', 'Negative']
+    const categories = [{name: 'All', value: 0}, {name: 'Positive', value: 1}, {name: 'Negative', value: 2}]
     const [category, setCategory] = useState(categories[0]);
     const [isCategoryMenuOpen, setCategoryMenuOpen] = useState(false);
 
-    const onSelect = (value) => {
-        setCategory(value);
+    const onSelect = (name) => {
+        setCategory(categories.find(c => c.name === name));
         setCategoryMenuOpen(false);
     }
 
@@ -31,10 +31,10 @@ export default function OpinionsWidget(props) {
 
     }
 
-    const categoryButtons = categories.filter(c => c !== category).map((c) =>
+    const categoryButtons = categories.filter(c => c.value !== category.value).map((c) =>
         <DropdownButton
-            key={c}
-            name={c}
+            key={c.value}
+            name={c.name}
             onClick={onSelect}
         />
     );
@@ -42,7 +42,7 @@ export default function OpinionsWidget(props) {
     const widgetNav = <React.Fragment>
         <WidgetDropdownSelect
             content={categoryButtons}
-            selected={category}
+            selected={category.name}
             isMenuOpen={isCategoryMenuOpen}
             onMenuClick={onMenuClick}
             onClickOutside={onClickOutside}
@@ -58,7 +58,7 @@ export default function OpinionsWidget(props) {
 
     return (
         <WidgetFrame WidgetName={t("opinionsMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
-            <OpinionsList opinions={opinions}/>
+            <OpinionsList opinions={opinions} category={category.value}/>
         </WidgetFrame>
     );
 }

@@ -7,11 +7,11 @@ export default function Opinion(props){
         <div className={styles.container}>
             <div className={styles.ratingFrame}>
                 <div className={styles.label}>Rating</div>
-                <img src={props.rating === "positive" ? positiveIcon : negativeIcon} alt={props.rating} className={styles.ratingIcon}/>
+                <img src={props.rating === 1 ? positiveIcon : negativeIcon} alt={props.rating} className={styles.ratingIcon}/>
             </div>
             <div className={styles.commentFrame}>
                 <div className={styles.label}>Comment</div>
-                <div className={styles.comment}>{props.comment}</div>
+                <div rows={2} readOnly={true} className={styles.comment}>{props.comment}</div>
             </div>
         </div>
     );
