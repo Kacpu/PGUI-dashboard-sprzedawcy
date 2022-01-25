@@ -23,6 +23,12 @@
     "pastIncome": "Past Income",
     "currentUnits": "Current units sold",
     "chartUnits": "Units [pcs]",
-    "pastUnits": "Past units sold"
+    "pastUnits": "Past units sold",
+    "Measure": "Measure",
+    "TimePeriod":"Time period",
+    "ChartType": "Chart type",
+    "PastData": "Past data",
+    "Turnover": "Turnover",
+    "UnitsSold": "Units sold"
 
 }

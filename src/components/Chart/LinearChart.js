@@ -11,7 +11,7 @@ export default function LinearChart(props) {
     let multpipleLine = <Line type="linear" dataKey="pastincome" name={t("pastIncome")} stroke="#de1f98" strokeWidth='2'/>;
     let Yaxis = <YAxis label={{ value: t("chartIncome"), position: "insideTop", offset: -30 }} />
 
-    if (props.measureType != "Turnover") {
+    if (!props.measureType) {
         actualLine = <Line type="linear" dataKey="units" name={t("currentUnits")} stroke="#5b00a6" strokeWidth='2'/>;
         pastLine = <Line type="linear" dataKey="units" name={t("pastUnits")} stroke="#5b00a6" strokeWidth='2'/>;
         multpipleLine = <Line type="linear" dataKey="pastunits" name={t("pastUnits")} stroke="#de1f98" strokeWidth='2'/>;

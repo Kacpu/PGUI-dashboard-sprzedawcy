@@ -10,8 +10,8 @@ export default function Chart(props) {
     let pastBar = <Bar dataKey="income" name={t("pastIncome")} fill="#5b00a6" />;
     let multpipleBar = <Bar dataKey="pastincome" name={t("pastIncome")} fill="#de1f98" />;
     let Yaxis = <YAxis label={{ value: t("chartIncome"), position: "insideTop", offset: -30 }} />
-
-    if (props.measureType != "Turnover") {
+    
+    if (!props.measureType) {
         actualBar = <Bar dataKey="units" name={t("currentUnits")} fill="#5b00a6" />;
         pastBar = <Bar dataKey="units" name={t("pastUnits")} fill="#5b00a6" />;
         multpipleBar = <Bar dataKey="pastunits" name={t("pastUnits")} fill="#de1f98" />;

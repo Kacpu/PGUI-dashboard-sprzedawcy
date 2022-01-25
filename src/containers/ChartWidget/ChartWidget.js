@@ -13,7 +13,7 @@ import { chartDataHour, actualChartData, pastChartData, pastPastChartData, pastC
 import { actualChartDataUnit, chartDataHourUnit, pastChartDataUnit, pastChartDataHourUnit, pastPastChartDataUnit } from "../../mocks/ChartUnitsMock"
 
 export default function ChartWidget(props) {
-    const measures = ['Turnover', 'Units sold']
+    const measures = [t('Turnover'), t('UnitsSold')]
     const [measure, setMeasure] = useState(measures[0]);
     const [isMeasureMenuOpen, setMeasureMenuOpen] = useState(false);
 
@@ -111,7 +111,7 @@ export default function ChartWidget(props) {
             onMenuClick={onMeasureMenuClick}
             onClickOutside={onMeasureMenuClickOutside}
             width={styles.width130}
-            label={"Measure"}
+            label={t("Measure")}
         />
         <WidgetDropdownSelect
             content={timePeriodButtons}
@@ -120,7 +120,7 @@ export default function ChartWidget(props) {
             onMenuClick={onTimePeriodMenuClick}
             onClickOutside={onTimePeriodMenuClickOutside}
             width={styles.width130}
-            label={"Time period"}
+            label={t("TimePeriod")}
         />
         <WidgetDropdownSelect
             content={chartTypeButtons}
@@ -129,12 +129,12 @@ export default function ChartWidget(props) {
             onMenuClick={onChartTypeMenuClick}
             onClickOutside={onChartTypeMenuClickOutside}
             width={styles.width130}
-            label={"Chart type"}
+            label={t("ChartType")}
         />
         <WidgetButton
             onClick={onClickAddPastPeriodData}
             icon={iconType}
-            name={t("Past data")}
+            name={t("PastData")}
         />
     </React.Fragment>;
 
@@ -152,7 +152,7 @@ export default function ChartWidget(props) {
     }
 
     function loadData() {
-        if (measure == "Units sold") {
+        if (measure == t("UnitsSold")) {
             var rt = loadUnitsDataMock()
         }
         else {
@@ -246,6 +246,15 @@ export default function ChartWidget(props) {
         }
     }
 
+    function checkMeasureType(){
+        if(measure === t("Turnover")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
     return (
         <WidgetFrame WidgetName={t("salesChartMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
             {checkChartType() ? (
@@ -253,7 +262,7 @@ export default function ChartWidget(props) {
                     chartData={loadData()}
                     isPastData={isPastData()}
                     isAddedPastData={shouldPastBeAdded()}
-                    measureType={measure}
+                    measureType={checkMeasureType()}
                 >
                 </LinearChart>
             ) : (
@@ -261,7 +270,7 @@ export default function ChartWidget(props) {
                 chartData={loadData()}
                 isPastData={isPastData()}
                 isAddedPastData={shouldPastBeAdded()}
-                measureType={measure}
+                measureType={checkMeasureType()}
             >
             </Chart>
             )}

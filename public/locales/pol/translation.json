@@ -23,5 +23,12 @@
     "pastIncome": "Zeszły przychód",
     "currentUnits": "Obecnie sprzedane szt.",
     "chartUnits": "Sztuki [pcs]",
-    "pastUnits": "Zeszłe sprzedanye szt."
+    "pastUnits": "Zeszłe sprzedanye szt.",
+    "Measure": "Miara",
+    "TimePeriod":"Okres czasu",
+    "ChartType": "Rodzaj wykresu",
+    "PastData": "Poprz. dane",
+    "Turnover": "Obrót",
+    "UnitsSold": "Sprz. szt."
+    
 }
