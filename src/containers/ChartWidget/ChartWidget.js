@@ -5,10 +5,12 @@ import DropdownButton from "../../components/WidgetDropdownSelect/DropdownButton
 import WidgetDropdownSelect from "../../components/WidgetDropdownSelect/WidgetDropdownSelect";
 import WidgetButton from "../../components/WidgetButton/WidgetButton";
 import addIcon from "../../assets/icons/add.png";
+import subIcon from "../../assets/icons/substract.png"
 import styles from './chartWidget.module.css'
 import Chart from "../../components/Chart/Chart"
-import { chartDataHour, actualChartData, pastChartData } from "../../mocks/ChartMock"
-import { actualChartDataUnit, chartDataHourUnit, pastChartDataUnit} from "../../mocks/ChartUnitsMock"
+import LinearChart from "../../components/Chart/LinearChart";
+import { chartDataHour, actualChartData, pastChartData, pastPastChartData, pastChartDataHour } from "../../mocks/ChartMock"
+import { actualChartDataUnit, chartDataHourUnit, pastChartDataUnit, pastChartDataHourUnit, pastPastChartDataUnit } from "../../mocks/ChartUnitsMock"
 
 export default function ChartWidget(props) {
     const measures = ['Turnover', 'Units sold']
@@ -19,7 +21,14 @@ export default function ChartWidget(props) {
     const [timePeriod, setTimePeriod] = useState(timePeriods[0]);
     const [isTimePeriodMenuOpen, setTimePeriodMenuOpen] = useState(false);
 
+    const chartTypes = ['Linear', 'Bar']
+    const [chartType, setChartType] = useState(chartTypes[0]);
+    const [isChartTypeMenuOpen, setChartTypeMenuOpen] = useState(false);
+
     const [addPastData, setAddPastData] = useState(false);
+
+    const iconTypes = [addIcon, subIcon]
+    const [iconType, setIconType] = useState(iconTypes[0]);
 
     const onSelectMeasure = (value) => {
         setMeasure(value);
@@ -28,10 +37,12 @@ export default function ChartWidget(props) {
 
     const onSelectTimePeriod = (value) => {
         setTimePeriod(value);
-        if (timePeriod == "Today") {
-            setAddPastData(false);
-        }
         setTimePeriodMenuOpen(false);
+    }
+
+    const onSelectChartType = (value) => {
+        setChartType(value);
+        setChartTypeMenuOpen(false);
     }
 
     const onMeasureMenuClick = () => {
@@ -42,6 +53,10 @@ export default function ChartWidget(props) {
         setTimePeriodMenuOpen((prev) => !prev);
     }
 
+    const onChartTypeMenuClick = () => {
+        setChartTypeMenuOpen((prev) => !prev);
+    }
+
     const onMeasureMenuClickOutside = () => {
         setMeasureMenuOpen(false);
     }
@@ -50,7 +65,17 @@ export default function ChartWidget(props) {
         setTimePeriodMenuOpen(false);
     }
 
+    const onChartTypeMenuClickOutside = () => {
+        setChartTypeMenuOpen(false);
+    }
+
     const onClickAddPastPeriodData = () => {
+        if(iconType === addIcon){
+            setIconType(subIcon);
+        }
+        else{
+            setIconType(addIcon);
+        }
         setAddPastData(!addPastData);
     }
 
@@ -67,6 +92,14 @@ export default function ChartWidget(props) {
             key={t}
             name={t}
             onClick={onSelectTimePeriod}
+        />
+    );
+
+    const chartTypeButtons = chartTypes.filter(t => t !== chartType).map((t) =>
+        <DropdownButton
+            key={t}
+            name={t}
+            onClick={onSelectChartType}
         />
     );
 
@@ -89,104 +122,149 @@ export default function ChartWidget(props) {
             width={styles.width130}
             label={"Time period"}
         />
+        <WidgetDropdownSelect
+            content={chartTypeButtons}
+            selected={chartType}
+            isMenuOpen={isChartTypeMenuOpen}
+            onMenuClick={onChartTypeMenuClick}
+            onClickOutside={onChartTypeMenuClickOutside}
+            width={styles.width130}
+            label={"Chart type"}
+        />
         <WidgetButton
             onClick={onClickAddPastPeriodData}
-            icon={addIcon}
-            name={t("Add past period data")}
+            icon={iconType}
+            name={t("Past data")}
         />
     </React.Fragment>;
 
     function isPastData() {
-        if(timePeriod=="Past week"){
+        if (timePeriod == "Past week") {
             return true
         }
     }
 
     function shouldPastBeAdded() {
-        if(addPastData){
-            if(timePeriod == "This week"){
-                return true
-            }
+        if (addPastData) {
+            return true
         }
         return false
     }
 
     function loadData() {
-        if(measure == "Units sold"){
+        if (measure == "Units sold") {
             var rt = loadUnitsDataMock()
         }
-        else{
+        else {
             var rt = loadIncomeDataMock()
         }
         return rt
     }
 
 
-    function loadUnitsDataMock(){
+
+    function loadUnitsDataMock() {
         if (timePeriod === "Today") {
-            if (addPastData == false || addPastData == true) {
+            if (addPastData == false) {
                 return chartDataHourUnit;
+            }
+            else {
+                var newArray = mergeDataChartMock(chartDataHourUnit, pastChartDataHourUnit)
+                return newArray;
             }
         } else if (timePeriod === "This week") {
             if (addPastData == false) {
                 return actualChartDataUnit;
             }
             else {
-                var newArray = [];
-                for (var i = 0; i < actualChartDataUnit.length; i++) {
-                    var newData = {};
-                    newData.day = actualChartDataUnit[i].day
-                    newData.units = actualChartDataUnit[i].units
-                    newData.pastUnits= pastChartDataUnit[i].units
-                    newArray.push(newData)
-                }
+                var newArray = mergeDataChartMock(actualChartDataUnit, pastChartDataUnit)
                 return newArray;
             }
         } else if (timePeriod === "Past week") {
-            if (addPastData == false || addPastData == true) {
+            if (addPastData == false) {
                 return pastChartDataUnit;
+            } else {
+                var newArray = mergeDataChartMock(pastChartDataUnit, pastPastChartDataUnit)
+                return newArray;
             }
         }
 
     }
 
+    function mergeDataChartMock(first, second) {
+        var newArray = [];
+        var firstKey = [Object.keys(first[0])[0]];
+        var secondKey = [Object.keys(first[0])[1]];
+        var thirdKey = "past" + secondKey
+
+        for (var i = 0; i < first.length; i++) {
+
+            var newData = {};
+            newData[firstKey] = first[i][firstKey]
+            newData[secondKey] = first[i][secondKey]
+            newData[thirdKey] = second[i][secondKey]
+            newArray.push(newData)
+        }
+        return newArray;
+    }
 
     function loadIncomeDataMock() {
         if (timePeriod === "Today") {
-            if (addPastData == false || addPastData == true) {
+            if (addPastData == false) {
                 return chartDataHour;
+            }
+            else {
+                var newArray = mergeDataChartMock(chartDataHour, pastChartDataHour)
+                return newArray
             }
         } else if (timePeriod === "This week") {
             if (addPastData == false) {
                 return actualChartData;
             }
             else {
-                var newArray = [];
-                for (var i = 0; i < actualChartData.length; i++) {
-                    var newData = {};
-                    newData.day = actualChartData[i].day
-                    newData.income = actualChartData[i].income
-                    newData.pastIncome = pastChartData[i].income
-                    newArray.push(newData)
-                }
+                var newArray = mergeDataChartMock(actualChartData, pastChartData)
                 return newArray;
             }
         } else if (timePeriod === "Past week") {
-            if (addPastData == false || addPastData == true) {
+            if (addPastData == false) {
                 return pastChartData;
             }
+            else {
+                var newArray = mergeDataChartMock(pastChartData, pastPastChartData)
+                return newArray;
+            }
+        }
+    }
+
+    function checkChartType() {
+        console.log(chartType)
+        if (chartType === "Linear") {
+            return true;
+        }
+        else {
+            return false;
         }
     }
 
     return (
         <WidgetFrame WidgetName={t("salesChartMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
-            <Chart
+            {checkChartType() ? (
+                <LinearChart
+                    chartData={loadData()}
+                    isPastData={isPastData()}
+                    isAddedPastData={shouldPastBeAdded()}
+                    measureType={measure}
+                >
+                </LinearChart>
+            ) : (
+                <Chart
                 chartData={loadData()}
                 isPastData={isPastData()}
                 isAddedPastData={shouldPastBeAdded()}
                 measureType={measure}
             >
             </Chart>
+            )}
         </WidgetFrame>
     );
 }

@@ -4,17 +4,17 @@ import styles from './chart.module.css'
 import { actualChartData, chartDataHour } from '../../mocks/ChartMock'
 import { t } from "i18next";
 
-export default function Chart(props) {
+export default function LinearChart(props) {
 
-    let actualBar = <Bar dataKey="income" name={t("currentIncome")} fill="#5b00a6" />;
-    let pastBar = <Bar dataKey="income" name={t("pastIncome")} fill="#5b00a6" />;
-    let multpipleBar = <Bar dataKey="pastincome" name={t("pastIncome")} fill="#de1f98" />;
+    let actualLine = <Line type="linear" dataKey="income" name={t("currentIncome")} stroke="#5b00a6" strokeWidth='2'/>;
+    let pastLine = <Line type="linear" dataKey="income" name={t("pastIncome")} stroke="#5b00a6" strokeWidth='2'/>;
+    let multpipleLine = <Line type="linear" dataKey="pastincome" name={t("pastIncome")} stroke="#de1f98" strokeWidth='2'/>;
     let Yaxis = <YAxis label={{ value: t("chartIncome"), position: "insideTop", offset: -30 }} />
 
     if (props.measureType != "Turnover") {
-        actualBar = <Bar dataKey="units" name={t("currentUnits")} fill="#5b00a6" />;
-        pastBar = <Bar dataKey="units" name={t("pastUnits")} fill="#5b00a6" />;
-        multpipleBar = <Bar dataKey="pastunits" name={t("pastUnits")} fill="#de1f98" />;
+        actualLine = <Line type="linear" dataKey="units" name={t("currentUnits")} stroke="#5b00a6" strokeWidth='2'/>;
+        pastLine = <Line type="linear" dataKey="units" name={t("pastUnits")} stroke="#5b00a6" strokeWidth='2'/>;
+        multpipleLine = <Line type="linear" dataKey="pastunits" name={t("pastUnits")} stroke="#de1f98" strokeWidth='2'/>;
         Yaxis = <YAxis label={{ value: t("chartUnits"), position: "insideTop", offset: -30 }} />
     }
 
@@ -23,7 +23,7 @@ export default function Chart(props) {
             <div className={styles.chartContainer}>
 
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
+                    <LineChart
                         data={props.chartData}
                         margin={{
                             top: 40,
@@ -42,15 +42,15 @@ export default function Chart(props) {
                         <Tooltip />
                         <Legend wrapperStyle={{ bottom: 5 }} />
                         {!props.isPastData &&
-                            actualBar
+                            actualLine
                         }
                         {props.isPastData &&
-                            pastBar
+                            pastLine
                         }
                         {props.isAddedPastData &&
-                            multpipleBar
+                            multpipleLine
                         }
-                    </BarChart>
+                    </LineChart>
                 </ResponsiveContainer>
             </div>
         </div>
@@ -65,11 +65,5 @@ function formatXAxis(tickItem) {
     else {
         var name = t(tickItem)
         return (name)
-    }
-}
-
-function formatYAxis(tickItem) {
-    if (tickItem == 0) {
-
     }
 }

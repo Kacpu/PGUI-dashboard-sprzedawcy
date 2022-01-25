@@ -6,6 +6,7 @@ import Dashboard from "./containers/Dashboard/Dashboard";
 import Footer from './components/Footer/Footer';
 import "./translation/i18n";
 import { useTranslation } from "react-i18next";
+import IconSwitch from "./elements/IconSwitch/IconSwitch";
 
 function App() {
     const [theme, setTheme] = useState('light');

@@ -1,0 +1,55 @@
+:root{
+    --width : 48px;
+    --height: 26px;
+    --IconSlider-width: 18px;
+  }
+  
+  .IconSwitch {
+    position: relative;
+    display: inline-block;
+    width: var(--width);
+    height: var(--height);
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  }
+  
+  .IconSwitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .IconSlider {
+    position: absolute;
+    cursor: pointer;
+    background-color: white;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .IconSlider:before {
+    position: absolute;
+    content: "";
+    height: var(--IconSlider-width);
+    width: var(--IconSlider-width);
+    left: 4px;
+    bottom: 4px;
+    top: 4px;
+
+    background-color:#7049C1;
+    opacity: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked+.IconSlider:before {
+    background-color: #333236;
+  }
+  
+  input:checked+.IconSlider:before {
+    transform: translateX(calc(var(--width) - var(--slider-width) - 8px));
+  }
+  
