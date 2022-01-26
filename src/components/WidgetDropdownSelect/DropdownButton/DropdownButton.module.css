@@ -3,18 +3,18 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 5px 2px 15px;
+    padding: 1px 5px 1px 15px;
     margin-top: 1px;
     cursor: pointer;
 
-    background: #EFE2FF;
+    background: var(--theme-widget-button);
     border-radius: 6px;
 
     align-self: stretch;
 }
 
 .container:hover {
-    background:var(--theme-icon-hover);
+    background:var(--theme-widget-button-hover);
 }
 
 .lastItem {
@@ -29,6 +29,6 @@
 
 .label {
     line-height: 1;
-    color: var(--theme-userlabel-color);
+    color: var(--theme-widget-text);
 }
 

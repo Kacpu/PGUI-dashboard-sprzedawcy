@@ -8,6 +8,6 @@
 .divider {
     border: 0;
     width: 100%;
-    border-top: 1px solid rgba(158, 158, 158, 0.5);
+    border-top: 1px solid var(--theme-widget-label);
     margin: 8px;
 }

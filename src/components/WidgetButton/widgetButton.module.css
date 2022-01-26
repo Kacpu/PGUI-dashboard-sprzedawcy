@@ -2,15 +2,15 @@
     height: 32px;
     display: flex;
     align-items: center;
-    padding: 2px 5px;
+    padding: 1px 8px;
     cursor: pointer;
 
-    background: #EFE2FF;
+    background: var(--theme-widget-button);
     border-radius: 6px;
 }
 
 .container:hover {
-    background:var(--theme-icon-hover);
+    background:var(--theme-widget-button-hover);
 }
 
 .imgIcon{
@@ -22,6 +22,6 @@
 
 .label {
     line-height: 1;
-    color: var(--theme-userlabel-color);
+    color: var(--theme-widget-text);
     margin: 0px 5px;
 }

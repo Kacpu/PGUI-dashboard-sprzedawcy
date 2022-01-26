@@ -9,7 +9,7 @@
 }
 
 .container:hover {
-    background-color: #EFE2FF;
+    background-color: var(--theme-widget-button);
 }
 
 .ratingFrame {
@@ -29,18 +29,22 @@
     /*flex: none;*/
     order: 1;
     flex-grow: 1;
+
+    perspective: 1px;
+    transform-style: preserve-3d
 }
 
 .label {
     margin-bottom: 4px;
     font-size: 10px;
-    color: #8C8C8C;
+    color: var(--theme-widget-label);
 }
 
 .ratingIcon{
-    filter: invert(var(--theme-icon-filter-invert));
+    filter: var(--theme-widget-icon-filter-brightness);
     width: 30px;
     height: 30px;
+    margin-top: 2px;
 }
 
 .comment {
@@ -51,7 +55,7 @@
     align-items: flex-start;
     margin-bottom: 4px;
     font-size: 12px;
-    color: #000000;
+    color: var(--theme-widget-text);
     text-align: left;
 
     /*flex: none;*/
@@ -60,7 +64,8 @@
     flex-grow: 0;
 
     overflow-y: auto;
-    /*scroll-behavior: smooth;*/
+    will-change: scroll-position;
+
 }
 
 ::-webkit-scrollbar {
