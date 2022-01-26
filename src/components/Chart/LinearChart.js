@@ -6,17 +6,28 @@ import { t } from "i18next";
 
 export default function LinearChart(props) {
 
-    let actualLine = <Line type="linear" dataKey="income" name={t("currentIncome")} stroke="#5b00a6" strokeWidth='2'/>;
-    let pastLine = <Line type="linear" dataKey="income" name={t("pastIncome")} stroke="#5b00a6" strokeWidth='2'/>;
-    let multpipleLine = <Line type="linear" dataKey="pastincome" name={t("pastIncome")} stroke="#de1f98" strokeWidth='2'/>;
+    let actualLine = <Line type="linear" dataKey="income" name={t("currentIncome")} stroke="black" strokeWidth='2' />;
+    let pastLine = <Line type="linear" dataKey="income" name={t("pastIncome")} stroke="black" strokeWidth='2' />;
+    let multpipleLine = <Line type="linear" dataKey="pastincome" name={t("pastIncome")} stroke="black" strokeWidth='2' />;
     let Yaxis = <YAxis label={{ value: t("chartIncome"), position: "insideTop", offset: -30 }} />
 
-    if (!props.measureType) {
-        actualLine = <Line type="linear" dataKey="units" name={t("currentUnits")} stroke="#5b00a6" strokeWidth='2'/>;
-        pastLine = <Line type="linear" dataKey="units" name={t("pastUnits")} stroke="#5b00a6" strokeWidth='2'/>;
-        multpipleLine = <Line type="linear" dataKey="pastunits" name={t("pastUnits")} stroke="#de1f98" strokeWidth='2'/>;
-        Yaxis = <YAxis label={{ value: t("chartUnits"), position: "insideTop", offset: -30 }} />
+    if (props.isPastData && props.isAddedPastData) {
+        multpipleLine = <Line type="linear" dataKey="pastincome" name={t("pastPastIncome")} stroke="black" strokeWidth='2' />;
     }
+
+    if (!props.measureType) {
+        actualLine = <Line type="linear" dataKey="units" name={t("currentUnits")} stroke="black" strokeWidth='2' />;
+        pastLine = <Line type="linear" dataKey="units" name={t("pastUnits")} stroke="black" strokeWidth='2' />;
+        multpipleLine = <Line type="linear" dataKey="pastunits" name={t("pastUnits")} stroke="black" strokeWidth='2' />;
+        Yaxis = <YAxis label={{ value: t("chartUnits"), position: "insideTop", offset: -30 }} />
+
+
+        if (props.isPastData && props.isAddedPastData) {
+            multpipleLine = <Line type="linear" dataKey="pastunits" name={t("pastPastUnits")} stroke="black" strokeWidth='2' />;
+        }
+    }
+
+
 
     return (
         <div className={styles.chartDiv}>
@@ -36,8 +47,8 @@ export default function LinearChart(props) {
                         <XAxis dataKey={Object.keys(props.chartData[0])[0]}
                             label={{ value: t("chartSpan"), position: "insideBottomRight", offset: -25 }}
                             tickFormatter={formatXAxis}
-                            tick={{ dy: 10 }} 
-                            styel={styles.xaxis}/>
+                            tick={{ dy: 10 }}
+                            styel={styles.xaxis} />
                         {Yaxis}
                         <Tooltip />
                         <Legend wrapperStyle={{ bottom: 5 }} />

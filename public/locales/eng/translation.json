@@ -41,6 +41,8 @@
     "Linear": "Linear",
     "Bar": "Bar",
     "loginToPage": "Sign in to see the page",
-    "toDashboard": "Sign in to see the dashboard"
+    "toDashboard": "Sign in to see the dashboard",
+    "pastPastIncome": "Older Income",
+    "pastPastUnits": "Older units sold"
 
 }

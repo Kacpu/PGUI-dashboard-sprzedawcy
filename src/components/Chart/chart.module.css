@@ -18,9 +18,7 @@
 	font-family:  Arial;
 }
 
-.xaxis{
-    
-}
+
 .recharts-wrapper .recharts-y-axis .recharts-cartesian-axis-tick text {
     fill: black !important;
   }

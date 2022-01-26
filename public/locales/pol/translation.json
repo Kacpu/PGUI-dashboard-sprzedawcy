@@ -41,5 +41,7 @@
     "Linear": "Liniowy",
     "Bar": "Słupkowy",
     "loginToPage": "Zaloguj się, aby zobaczyć stronę",
-    "toDashboard":  "Zaloguj się, aby przejść do dashboardu!"
+    "toDashboard":  "Zaloguj się, aby przejść do dashboardu!",
+    "pastPastIncome": "Starsze dane przychodu",
+    "pastPastUnits": "Starsze dane sprzedaży"
 }

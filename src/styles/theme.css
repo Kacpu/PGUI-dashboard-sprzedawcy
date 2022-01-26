@@ -18,9 +18,18 @@
     --theme-widget-icon-filter-brightness: brightness(1);
     --theme-widget-divider: #dadada;
 
+    --theme-chart-tick-color: grey;
+    --theme-chart-label-color: black;
+    --theme-primarychart-color: rgb(174, 0, 255);
+    --theme-secondarychart-color: rgb(180, 3, 3);
+    --theme-olderchart-color: rgb(0, 105, 112);
+
+
+
+
 }
 
-.dark {
+.dark{
     --theme-header-color: #676767;
     --theme-page-background: #454545;
     --theme-page-text: rgb(170, 170, 170);
@@ -38,4 +47,10 @@
     --theme-widget-text: #ECECEC;
     --theme-widget-icon-filter-brightness: brightness(1.75);
     --theme-widget-divider: #777777;
+
+    --theme-chart-tick-color: rgb(201, 201, 201);
+    --theme-chart-label-color: rgb(214, 214, 214);
+    --theme-primarychart-color: rgb(61, 17, 82);
+    --theme-secondarychart-color: rgb(0, 0, 0);
+    --theme-olderchart-color: rgb(3, 83, 3);
 }

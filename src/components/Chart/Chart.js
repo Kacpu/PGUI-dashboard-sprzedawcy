@@ -1,22 +1,39 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, BarChart, Bar } from 'recharts';
 import React, { PureComponent } from 'react';
 import styles from './chart.module.css'
+import './chartStyle.scss'
 import { actualChartData, chartDataHour } from '../../mocks/ChartMock'
 import { t } from "i18next";
 
 export default function Chart(props) {
 
-    let actualBar = <Bar dataKey="income" name={t("currentIncome")} fill="#5b00a6" />;
-    let pastBar = <Bar dataKey="income" name={t("pastIncome")} fill="#5b00a6" />;
-    let multpipleBar = <Bar dataKey="pastincome" name={t("pastIncome")} fill="#de1f98" />;
+    //Zmiana stylów grafu
+    //Lepiej użyć StyledComponent, ale na tym poziomie projektu jest za dużo refaktoryzacji
+
+
+    //console.log(style)
+
+    let actualBar = <Bar dataKey="income" name={t("currentIncome")} fill="black" />;
+    let pastBar = <Bar dataKey="income" name={t("pastIncome")} fill="black" />;
+    let multpipleBar = <Bar dataKey="pastincome" name={t("pastIncome")} fill="black" />;
     let Yaxis = <YAxis label={{ value: t("chartIncome"), position: "insideTop", offset: -30 }} />
-    
-    if (!props.measureType) {
-        actualBar = <Bar dataKey="units" name={t("currentUnits")} fill="#5b00a6" />;
-        pastBar = <Bar dataKey="units" name={t("pastUnits")} fill="#5b00a6" />;
-        multpipleBar = <Bar dataKey="pastunits" name={t("pastUnits")} fill="#de1f98" />;
-        Yaxis = <YAxis label={{ value: t("chartUnits"), position: "insideTop", offset: -30 }} />
+
+    if (props.isPastData && props.isAddedPastData) {
+        multpipleBar = <Bar dataKey="pastincome" name={t("pastPastIncome")} fill="black" />;
     }
+
+    if (!props.measureType) {
+        actualBar = <Bar dataKey="units" name={t("currentUnits")} fill="black" />;
+        pastBar = <Bar dataKey="units" name={t("pastUnits")} fill="black" />;
+        multpipleBar = <Bar dataKey="pastunits" name={t("pastUnits")} fill="black" />;
+        Yaxis = <YAxis label={{ value: t("chartUnits"), position: "insideTop", offset: -30 }} />
+
+        if (props.isPastData && props.isAddedPastData) {
+            multpipleBar = <Bar dataKey="pastunits" name={t("pastPastUnits")} fill="black" />;
+        }
+
+    }
+
 
     return (
         <div className={styles.chartDiv}>
@@ -36,8 +53,8 @@ export default function Chart(props) {
                         <XAxis dataKey={Object.keys(props.chartData[0])[0]}
                             label={{ value: t("chartSpan"), position: "insideBottomRight", offset: -25 }}
                             tickFormatter={formatXAxis}
-                            tick={{ dy: 10 }} 
-                            styel={styles.xaxis}/>
+                            tick={{ dy: 10 }}
+                            style={styles.xaxis} />
                         {Yaxis}
                         <Tooltip />
                         <Legend wrapperStyle={{ bottom: 5 }} />

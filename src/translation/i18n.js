@@ -9,7 +9,7 @@ i18n
     react:{
         useSuspense: false
     },
-    lng: "pol",
+    lng: "eng",
     fallbackLng: "eng",
     interpolation: {
       escapeValue: false

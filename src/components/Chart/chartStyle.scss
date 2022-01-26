@@ -1,0 +1,79 @@
+
+/* Ticks */
+.recharts-text.recharts-cartesian-axis-tick-value {
+    fill: var(--theme-chart-tick-color);
+}
+
+/* Napisy na osiach */
+.recharts-text.recharts-label {
+    fill: var(--theme-chart-label-color);
+    font-weight: normal;
+}
+
+/* Słupki obecne */
+path[name^="Obec"].recharts-rectangle, path[name^="Current"].recharts-rectangle {
+    fill: var(--theme-primarychart-color);
+}
+
+/* Słupki zeszłe */
+path[name^="Zesz"].recharts-rectangle, path[name^="Past"].recharts-rectangle {
+    fill: var(--theme-secondarychart-color)
+}
+
+/* Słupkie jeszcze starsze */
+path[name^="Starsz"].recharts-rectangle, path[name^="Older"].recharts-rectangle {
+    fill: var(--theme-olderchart-color)
+}
+
+/* Wykres Liniowy obecny */
+path[name^="Current"].recharts-line-curve, path[name^="Obec"].recharts-line-curve {
+    stroke: var(--theme-primarychart-color);
+}
+
+/* Wykres Liniowy zeszły */
+path[name^="Past"].recharts-line-curve, path[name^="Zesz"].recharts-line-curve {
+    stroke: var(--theme-secondarychart-color);
+}
+
+/* Wykres Liniowy starszy */
+path[name^="Older"].recharts-line-curve, path[name^="Starsz"].recharts-line-curve {
+    stroke: var(--theme-olderchart-color);
+}
+
+/* Kółka obecne */
+circle[name^="Current"].recharts-dot.recharts-line-dot, circle[name^="Obec"].recharts-dot.recharts-line-dot {
+    stroke: var(--theme-primarychart-color);
+}
+
+/* Kółka zeszłe */
+circle[name^="Past"].recharts-dot.recharts-line-dot, circle[name^="Zesz"].recharts-dot.recharts-line-dot {
+    stroke: var(--theme-secondarychart-color);
+}
+
+/* Kółka jeszce starsze */
+circle[name^="Older"].recharts-dot.recharts-line-dot, circle[name^="Starsz"].recharts-dot.recharts-line-dot {
+    stroke: var(--theme-olderchart-color);
+    $isOlder: red;
+}
+/* Legenda dla obecnej osi */
+.recharts-legend-item.legend-item-0 .recharts-legend-item-text {
+    color: var(--theme-primarychart-color) !important;
+}
+
+.recharts-legend-item.legend-item-0 .recharts-legend-icon {
+    stroke: var(--theme-primarychart-color);
+    fill: var(--theme-primarychart-color);
+}
+
+/* Legenda dla zeszłej osi */
+.recharts-legend-item.legend-item-1 .recharts-legend-item-text {
+    color: var(--theme-secondarychart-color) !important;
+}
+
+.recharts-legend-item.legend-item-1 .recharts-legend-icon {
+    stroke: var(--theme-secondarychart-color);
+    fill: var(--theme-secondarychart-color);
+}
+
+/* Legenda dla starszej osi */
+
