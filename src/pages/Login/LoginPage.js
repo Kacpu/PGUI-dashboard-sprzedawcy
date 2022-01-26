@@ -35,9 +35,9 @@ export default function LoginPage() {
                     {t("loginToPage")} <b>{from.substr(1)}</b>!
                 </p>
             ) : (
-                <p>
+                <h1 className="titleSign">
                     {t("toDashboard")}
-                </p>
+                </h1>
             )}
             <form className={styles.loginForm} onSubmit={handleSubmit}>
                 <div className={styles.input}>

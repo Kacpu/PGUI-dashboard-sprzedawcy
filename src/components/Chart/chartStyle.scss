@@ -75,5 +75,12 @@ circle[name^="Older"].recharts-dot.recharts-line-dot, circle[name^="Starsz"].rec
     fill: var(--theme-secondarychart-color);
 }
 
-/* Legenda dla starszej osi */
 
+
+// $check: path[name^="Starsz"].recharts-rectangle {
+
+// }
+
+.recharts-legend-item.legend-item-0 .recharts-legend-item-text {
+    color: var(--theme-primarychart-color) !important;
+}

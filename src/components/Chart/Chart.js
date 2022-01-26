@@ -12,6 +12,7 @@ export default function Chart(props) {
 
 
     //console.log(style)
+    let classN = "Normal"
 
     let actualBar = <Bar dataKey="income" name={t("currentIncome")} fill="black" />;
     let pastBar = <Bar dataKey="income" name={t("pastIncome")} fill="black" />;
@@ -20,6 +21,7 @@ export default function Chart(props) {
 
     if (props.isPastData && props.isAddedPastData) {
         multpipleBar = <Bar dataKey="pastincome" name={t("pastPastIncome")} fill="black" />;
+        classN = "Older"
     }
 
     if (!props.measureType) {
@@ -30,6 +32,7 @@ export default function Chart(props) {
 
         if (props.isPastData && props.isAddedPastData) {
             multpipleBar = <Bar dataKey="pastunits" name={t("pastPastUnits")} fill="black" />;
+            classN = "Older"
         }
 
     }
@@ -38,7 +41,6 @@ export default function Chart(props) {
     return (
         <div className={styles.chartDiv}>
             <div className={styles.chartContainer}>
-
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart
                         data={props.chartData}
