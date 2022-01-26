@@ -256,6 +256,7 @@ export default function ChartWidget(props) {
     }
 
     return (
+        <div className={styles.WidgetDiv}>
         <WidgetFrame WidgetName={t("salesChartMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
             {checkChartType() ? (
                 <LinearChart
@@ -275,6 +276,7 @@ export default function ChartWidget(props) {
             </Chart>
             )}
         </WidgetFrame>
+        </div>
     );
 }
 

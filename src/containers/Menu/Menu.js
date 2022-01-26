@@ -11,7 +11,7 @@ export default function Menu(props) {
 
     return (
         <Suspense fallback="loading">
-            <div className={`App ${props.theme}`}>
+            <div className={`App ${props.theme}`} id="appDiv">
                 <div className={styles.contentWrap}>
                     <NavigationHeader
                         chartWidgetOpen={props.chartWidgetOpen}

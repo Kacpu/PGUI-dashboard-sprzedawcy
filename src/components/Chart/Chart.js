@@ -10,7 +10,8 @@ export default function Chart(props) {
     //Zmiana stylów grafu
     //Lepiej użyć StyledComponent, ale na tym poziomie projektu jest za dużo refaktoryzacji
 
-
+    var style = getComputedStyle(document.body)
+    console.log( style.getPropertyValue('--theme-primarychart-color') )
     //console.log(style)
     let classN = "Normal"
 
@@ -41,7 +42,7 @@ export default function Chart(props) {
     return (
         <div className={styles.chartDiv}>
             <div className={styles.chartContainer}>
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="100%">
                     <BarChart
                         data={props.chartData}
                         margin={{

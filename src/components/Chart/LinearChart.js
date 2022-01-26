@@ -33,7 +33,7 @@ export default function LinearChart(props) {
         <div className={styles.chartDiv}>
             <div className={styles.chartContainer}>
 
-                <ResponsiveContainer width="100%" height="100%">
+                <ResponsiveContainer width="99%">
                     <LineChart
                         data={props.chartData}
                         margin={{

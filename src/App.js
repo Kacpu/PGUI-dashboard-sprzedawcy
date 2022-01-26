@@ -25,7 +25,7 @@ function App() {
     const auth = useAuth();
 
     function changeThem() {
-        console.log(theme)
+        //console.log(element)
         setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
     }
 
