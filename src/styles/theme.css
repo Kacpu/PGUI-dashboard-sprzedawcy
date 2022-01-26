@@ -16,6 +16,7 @@
     --theme-widget-label: #8C8C8C;
     --theme-widget-text: #000000;
     --theme-widget-icon-filter-brightness: brightness(1);
+    --theme-widget-divider: #dadada;
 
 }
 
@@ -36,4 +37,5 @@
     --theme-widget-label: #c5c3c3;
     --theme-widget-text: #ECECEC;
     --theme-widget-icon-filter-brightness: brightness(1.75);
+    --theme-widget-divider: #777777;
 }

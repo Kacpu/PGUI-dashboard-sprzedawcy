@@ -1,11 +1,11 @@
-import styles from'./menuWidgetItemButton.module.css'
+import styles from './menuWidgetItemButton.module.css'
 import addIcon from "../../assets/icons/add.png";
 import subtractIcon from "../../assets/icons/substract.png";
 
-
-function MenuWidgetItemButton(props){
-    return(
-        <div className={`${styles.container} ${props.isWidgetOpen ? styles.open : null}`} onClick={props.onClick}>
+function MenuWidgetItemButton(props) {
+    return (
+        <div className={`${styles.container} ${props.isWidgetOpen ? styles.open : null}`}
+             onClick={() => props.onClick(props.param)}>
             <div className={styles.imgContainer}>
                 <img src={props.widgetIcon} alt={props.widgetName} className={styles.imgIcon}/>
             </div>

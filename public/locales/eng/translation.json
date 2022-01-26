@@ -29,6 +29,18 @@
     "ChartType": "Chart type",
     "PastData": "Past data",
     "Turnover": "Turnover",
-    "UnitsSold": "Units sold"
+    "UnitsSold": "Units sold",
+    "All" : "All",
+    "Positive": "Positive",
+    "Negative": "Negative",
+    "Category": "Category",
+    "Go to opinions": "Go to opinions",
+    "Today": "Today",
+    "This week": "This week",
+    "Past week": "Past week",
+    "Linear": "Linear",
+    "Bar": "Bar",
+    "loginToPage": "Sign in to see the page",
+    "toDashboard": "Sign in to see the dashboard"
 
 }

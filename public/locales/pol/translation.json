@@ -23,12 +23,23 @@
     "pastIncome": "Zeszły przychód",
     "currentUnits": "Obecnie sprzedane szt.",
     "chartUnits": "Sztuki [pcs]",
-    "pastUnits": "Zeszłe sprzedanye szt.",
+    "pastUnits": "Zeszłe sprzedane szt.",
     "Measure": "Miara",
     "TimePeriod":"Okres czasu",
     "ChartType": "Rodzaj wykresu",
     "PastData": "Poprz. dane",
     "Turnover": "Obrót",
-    "UnitsSold": "Sprz. szt."
-    
+    "UnitsSold": "Sprz. szt.",
+    "All" : "Wszystkie",
+    "Positive": "Pozytywne",
+    "Negative": "Negatywne",
+    "Category": "Kategoria",
+    "Go to opinions": "Przejdź do opinii",
+    "Today": "Dzisiaj",
+    "This week": "Ten tydzień",
+    "Past week": "Zeszły tydzień",
+    "Linear": "Liniowy",
+    "Bar": "Słupkowy",
+    "loginToPage": "Zaloguj się, aby zobaczyć stronę",
+    "toDashboard":  "Zaloguj się, aby przejść do dashboardu!"
 }

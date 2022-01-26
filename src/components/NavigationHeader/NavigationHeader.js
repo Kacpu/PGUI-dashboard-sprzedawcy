@@ -22,7 +22,8 @@ import MenuWidgetItemButton from "../DropdownMenuWidgetItemButton/MenuWidgetItem
 import chartWidgetIcon from "../../assets/icons/chart-widget.png";
 import rankingWidgetIcon from "../../assets/icons/ranking-icon.png";
 import opinionsWidgetIcon from "../../assets/icons/ratings-widget-icon.png";
-import { useTranslation, withTranslation } from "react-i18next";
+import {useTranslation, withTranslation} from "react-i18next";
+import React from "react";
 
 class NavigationHeader extends Component {
     constructor(props) {
@@ -35,7 +36,6 @@ class NavigationHeader extends Component {
             isLanguagesListOpen: false
         };
     }
-
 
     onWidgetMenuMenuClick = () => {
         this.setState((prev) => ({
@@ -75,39 +75,68 @@ class NavigationHeader extends Component {
 
     onManageUserMenuClickOutside = () => {
         this.setState({
-            isManageUserMenuOpen: false
+            isManageUserMenuOpen: false,
+            isUsersListOpen: false
         });
     }
 
     onSettingsMenuClickOutside = () => {
         this.setState({
-            isSettingsMenuOpen: false
+            isSettingsMenuOpen: false,
+            isLanguagesListOpen: false
         });
     }
 
-   
+    onUsersListItemClick = (value) => {
+        this.props.onChangeAccount(value);
+        this.onManageUserMenuClickOutside();
+    }
+
+    onLanguagesListItemClick = (f) => {
+        f();
+        this.onSettingsMenuClickOutside();
+    }
+
+    onWidgetMenuItemClick = (f) => {
+        f();
+        this.onWidgetMenuClickOutside();
+    }
+
+    isPolish = () => {
+        if (this.props.language === 'pol') {
+            return true;
+        }
+    }
+
+    isEnglish = () => {
+        if (this.props.language === 'eng') {
+            return true;
+        }
+    }
 
     render() {
         const {t} = this.props;
-
         const widgetMenuButtons = [
             <MenuWidgetItemButton
                 widgetIcon={chartWidgetIcon}
                 widgetName={t("salesChartMenu")}
                 isWidgetOpen={this.props.chartWidgetOpen}
-                onClick={this.props.manageChartWidget}
+                param={this.props.manageChartWidget}
+                onClick={this.onWidgetMenuItemClick}
             />,
             <MenuWidgetItemButton
                 widgetIcon={opinionsWidgetIcon}
                 widgetName={t("opinionsMenu")}
                 isWidgetOpen={this.props.opinionWidgetOpen}
-                onClick={this.props.manageOpinionsWidget}
+                param={this.props.manageOpinionsWidget}
+                onClick={this.onWidgetMenuItemClick}
             />,
             <MenuWidgetItemButton
                 widgetIcon={rankingWidgetIcon}
                 widgetName={t("offersMenu")}
                 isWidgetOpen={this.props.rankingWidgetOpen}
-                onClick={this.props.manageRankingWidget}
+                param={this.props.manageRankingWidget}
+                onClick={this.onWidgetMenuItemClick}
             />
         ];
 
@@ -118,7 +147,8 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
                         name={t("changeAccount")}
-                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
+                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30"
+                                       height="30"/>}
                         onClick={this.onUsersListClick}
                     />
                 }
@@ -126,29 +156,28 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={changeAccountIcon}
                         name={t("changeAccount")}
-                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
+                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30"
+                                       height="30"/>}
                         onClick={this.onUsersListClick}
                     />
                 }
-                content={[
-                    <ListItemButton
-                        functionalIcon={userIcon}
-                        name={"User1"}
-                    />,
-                    <ListItemButton
-                        functionalIcon={userIcon}
-                        name={"User2"}
-                    />,
-                    <ListItemButton
-                        functionalIcon={userIcon}
-                        name={"User3"}
-                    />
-                ]}
+                content={ this.props.chosenUser &&
+                    this.props.users.filter(u => u.id !== this.props.chosenUser.id).map(u =>
+                        <ListItemButton
+                            key={u.id}
+                            functionalIcon={userIcon}
+                            name={u.name}
+                            param={u.id}
+                            onClick={this.onUsersListItemClick}
+                        />
+                    )
+                }
             />,
             <DropdownMenuItemButton
                 functionalIcon={logoutIcon}
                 name={t("logout")}
                 lastItem={null}
+                onClick={this.props.onLogout}
             />
         ]
 
@@ -159,7 +188,8 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
                         name={t("changeLang")}
-                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30" height="30"/>}
+                        lastItem={<img src={expandIcon} className={styles.imgIcon} alt="expand" width="30"
+                                       height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
                 }
@@ -167,7 +197,8 @@ class NavigationHeader extends Component {
                     <DropdownMenuItemButton
                         functionalIcon={languageIcon}
                         name={t("changeLang")}
-                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30" height="30"/>}
+                        lastItem={<img src={collapseIcon} className={styles.imgIcon} alt="collapse" width="30"
+                                       height="30"/>}
                         onClick={this.onLanguagesListClick}
                     />
                 }
@@ -175,15 +206,18 @@ class NavigationHeader extends Component {
                     <ListItemButton
                         functionalIcon={polishIcon}
                         name={t("polish")}
-                        onClick={this.props.changeToPolish}
+                        param={this.props.changeToPolish}
+                        onClick={this.onLanguagesListItemClick}
                         type={"language"}
-                        
+                        isChosen={this.isPolish()}
                     />,
                     <ListItemButton
                         functionalIcon={usaIcon}
                         name={t("english")}
-                        onClick={this.props.changeToEnglish}
+                        param={this.props.changeToEnglish}
+                        onClick={this.onLanguagesListItemClick}
                         type={"language"}
+                        isChosen={this.isEnglish()}
                     />
                 ]}
             />,
@@ -196,31 +230,36 @@ class NavigationHeader extends Component {
 
         return (
             <div className={styles.navHeader}>
-                <DropdownMenu
-                    dropButton={
-                        <NavHeaderButton
-                            style={styles.widgetMenuButton}
-                            onClick={this.onWidgetMenuMenuClick}
-                            icon={<img src={WidgetMenuPng}  alt="widget menu" className={styles.imgIcon}/>}
+                {
+                    this.props.chosenUser &&
+                    <React.Fragment>
+                        <DropdownMenu
+                            dropButton={
+                                <NavHeaderButton
+                                    style={styles.widgetMenuButton}
+                                    onClick={this.onWidgetMenuMenuClick}
+                                    icon={<img src={WidgetMenuPng} alt="widget menu" className={styles.imgIcon}/>}
+                                />
+                            }
+                            isOpen={this.state.isWidgetMenuOpen}
+                            content={widgetMenuButtons}
+                            position={styles.rightPosition}
+                            onClickOutside={this.onWidgetMenuClickOutside}
                         />
-                    }
-                    isOpen={this.state.isWidgetMenuOpen}
-                    content={widgetMenuButtons}
-                    position={styles.rightPosition}
-                    onClickOutside={this.onWidgetMenuClickOutside}
-                />
-                <DropdownMenu
-                    dropButton={
-                        <ManageUserButton
-                            username={"Name Surname"}
-                            onClick={this.onManageUserMenuClick}
+                        <DropdownMenu
+                            dropButton={
+                                <ManageUserButton
+                                    username={this.props.chosenUser.name}
+                                    onClick={this.onManageUserMenuClick}
+                                />
+                            }
+                            isOpen={this.state.isManageUserMenuOpen}
+                            content={userManageButtons}
+                            contentPosition={styles.contentToRightEdge}
+                            onClickOutside={this.onManageUserMenuClickOutside}
                         />
-                    }
-                    isOpen={this.state.isManageUserMenuOpen}
-                    content={userManageButtons}
-                    contentPosition={styles.contentToRightEdge}
-                    onClickOutside={this.onManageUserMenuClickOutside}
-                />
+                    </React.Fragment>
+                }
                 <DropdownMenu
                     dropButton={
                         <NavHeaderButton

@@ -13,7 +13,7 @@ import { chartDataHour, actualChartData, pastChartData, pastPastChartData, pastC
 import { actualChartDataUnit, chartDataHourUnit, pastChartDataUnit, pastChartDataHourUnit, pastPastChartDataUnit } from "../../mocks/ChartUnitsMock"
 
 export default function ChartWidget(props) {
-    const measures = [t('Turnover'), t('UnitsSold')]
+    const measures = ['Turnover', 'UnitsSold']
     const [measure, setMeasure] = useState(measures[0]);
     const [isMeasureMenuOpen, setMeasureMenuOpen] = useState(false);
 
@@ -110,7 +110,7 @@ export default function ChartWidget(props) {
             isMenuOpen={isMeasureMenuOpen}
             onMenuClick={onMeasureMenuClick}
             onClickOutside={onMeasureMenuClickOutside}
-            width={styles.width130}
+            width={styles.width125}
             label={t("Measure")}
         />
         <WidgetDropdownSelect
@@ -119,7 +119,7 @@ export default function ChartWidget(props) {
             isMenuOpen={isTimePeriodMenuOpen}
             onMenuClick={onTimePeriodMenuClick}
             onClickOutside={onTimePeriodMenuClickOutside}
-            width={styles.width130}
+            width={styles.width150}
             label={t("TimePeriod")}
         />
         <WidgetDropdownSelect
@@ -128,7 +128,7 @@ export default function ChartWidget(props) {
             isMenuOpen={isChartTypeMenuOpen}
             onMenuClick={onChartTypeMenuClick}
             onClickOutside={onChartTypeMenuClickOutside}
-            width={styles.width130}
+            width={styles.width125}
             label={t("ChartType")}
         />
         <WidgetButton
@@ -139,7 +139,7 @@ export default function ChartWidget(props) {
     </React.Fragment>;
 
     function isPastData() {
-        if (timePeriod == "Past week") {
+        if (timePeriod === "Past week") {
             return true
         }
     }
@@ -152,7 +152,7 @@ export default function ChartWidget(props) {
     }
 
     function loadData() {
-        if (measure == t("UnitsSold")) {
+        if (measure === "UnitsSold") {
             var rt = loadUnitsDataMock()
         }
         else {
@@ -165,7 +165,7 @@ export default function ChartWidget(props) {
 
     function loadUnitsDataMock() {
         if (timePeriod === "Today") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return chartDataHourUnit;
             }
             else {
@@ -173,7 +173,7 @@ export default function ChartWidget(props) {
                 return newArray;
             }
         } else if (timePeriod === "This week") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return actualChartDataUnit;
             }
             else {
@@ -181,7 +181,7 @@ export default function ChartWidget(props) {
                 return newArray;
             }
         } else if (timePeriod === "Past week") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return pastChartDataUnit;
             } else {
                 var newArray = mergeDataChartMock(pastChartDataUnit, pastPastChartDataUnit)
@@ -210,7 +210,7 @@ export default function ChartWidget(props) {
 
     function loadIncomeDataMock() {
         if (timePeriod === "Today") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return chartDataHour;
             }
             else {
@@ -218,7 +218,7 @@ export default function ChartWidget(props) {
                 return newArray
             }
         } else if (timePeriod === "This week") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return actualChartData;
             }
             else {
@@ -226,7 +226,7 @@ export default function ChartWidget(props) {
                 return newArray;
             }
         } else if (timePeriod === "Past week") {
-            if (addPastData == false) {
+            if (addPastData === false) {
                 return pastChartData;
             }
             else {
@@ -247,7 +247,7 @@ export default function ChartWidget(props) {
     }
 
     function checkMeasureType(){
-        if(measure === t("Turnover")){
+        if(measure === "Turnover"){
             return true;
         }
         else{

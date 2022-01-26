@@ -10,14 +10,14 @@ import collapseIcon from "../../assets/icons/collapse-icon.png";
 export default function WidgetDropdownSelect(props) {
     const expandButton =
         <DropdownButton
-            name={t(props.selected)}
+            name={props.selected}
             icon={expandIcon}
             onClick={props.onMenuClick}
         />
 
     const collapseButton =
         <DropdownButton
-            name={t(props.selected)}
+            name={props.selected}
             icon={collapseIcon}
             onClick={props.onMenuClick}
         />
