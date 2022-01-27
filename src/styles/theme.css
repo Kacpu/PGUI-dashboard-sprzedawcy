@@ -23,8 +23,8 @@
 
     --theme-chart-tick-color: grey;
     --theme-chart-label-color: black;
-    --theme-primarychart-color: rgb(174, 0, 255);
-    --theme-secondarychart-color: rgb(180, 3, 3);
+    --theme-primarychart-color: rgb(124, 54, 156);
+    --theme-secondarychart-color: rgb(58, 102, 223);
     --theme-olderchart-color: rgb(0, 105, 112);
 
 
@@ -53,7 +53,7 @@
 
     --theme-chart-tick-color: rgb(201, 201, 201);
     --theme-chart-label-color: rgb(214, 214, 214);
-    --theme-primarychart-color: rgb(61, 17, 82);
-    --theme-secondarychart-color: rgb(0, 0, 0);
+    --theme-primarychart-color: rgb(184, 139, 243);
+    --theme-secondarychart-color: rgb(198, 205, 214);
     --theme-olderchart-color: rgb(3, 83, 3);
 }

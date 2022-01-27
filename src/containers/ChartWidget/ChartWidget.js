@@ -105,6 +105,7 @@ export default function ChartWidget(props) {
 
     const widgetNav = <React.Fragment>
         <WidgetDropdownSelect
+            className={styles.widgetDropdown}
             content={measureButtons}
             selected={measure}
             isMenuOpen={isMeasureMenuOpen}
@@ -114,6 +115,7 @@ export default function ChartWidget(props) {
             label={t("Measure")}
         />
         <WidgetDropdownSelect
+                    className={styles.widgetDropdown}
             content={timePeriodButtons}
             selected={timePeriod}
             isMenuOpen={isTimePeriodMenuOpen}
@@ -123,6 +125,7 @@ export default function ChartWidget(props) {
             label={t("TimePeriod")}
         />
         <WidgetDropdownSelect
+                    className={styles.widgetDropdown}
             content={chartTypeButtons}
             selected={chartType}
             isMenuOpen={isChartTypeMenuOpen}
