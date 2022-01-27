@@ -6,15 +6,29 @@ import collapseIcon from "../../../assets/icons/collapse-icon.png";
 import React from "react";
 
 export default function HeadBar(props) {
-    const soldIcon = expandIcon;
-    const earningIcon = expandIcon;
+    
+    let soldIcon = expandIcon;
+    let earningIcon = expandIcon;
 
     const onSold = () => {
-
+        if(soldIcon === expandIcon){
+            console.log("aaa")
+            props.onClick(2);
+            soldIcon = collapseIcon;
+        } else {
+            props.onClick(1);
+            soldIcon = expandIcon;
+        }
     }
 
     const onEarnings = () => {
-
+        if(soldIcon === expandIcon){
+            props.onClick(4);
+            soldIcon = collapseIcon;
+        } else {
+            props.onClick(3);
+            soldIcon = expandIcon;
+        }
     }
 
     return (
@@ -26,14 +40,14 @@ export default function HeadBar(props) {
                     <DropdownButton
                         name={"Sold [pcs]"}
                         icon={soldIcon}
-                        onClick={props.onClick}
+                        onClick={onSold}
                     />
                 </div>
                 <div className={styles.labelContainer}>
                     <DropdownButton
                         name={"Earnings [zł]"}
                         icon={earningIcon}
-                        onClick={props.onClick}
+                        onClick={onEarnings}
                     />
                 </div>
             </div>
