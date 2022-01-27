@@ -4,6 +4,7 @@ import React, {useState} from "react";
 import DropdownButton from "../../components/WidgetDropdownSelect/DropdownButton/DropdownButton";
 import WidgetDropdownSelect from "../../components/WidgetDropdownSelect/WidgetDropdownSelect";
 import style from './RankingWidget.module.css'
+import Ranking from "../../components/Ranking/Ranking";
 export default function RankingWidget(props) {
     const criteria = [{name: "The most frequently bought", value: 1}, {name: "The least frequently bought", value: 2}]
     const [criterion, setCriterion] = useState(criteria[0]);
@@ -31,20 +32,20 @@ export default function RankingWidget(props) {
     );
 
     const widgetNav = <React.Fragment>
-        <WidgetDropdownSelect
-            content={criteriaButtons}
-            selected={criterion.name}
-            isMenuOpen={isCriteriaMenuOpen}
-            onMenuClick={onMenuClick}
-            onClickOutside={onClickOutside}
-            width={style.width220}
-            label={"Display by"}
-        />
+        {/*<WidgetDropdownSelect*/}
+        {/*    content={criteriaButtons}*/}
+        {/*    selected={criterion.name}*/}
+        {/*    isMenuOpen={isCriteriaMenuOpen}*/}
+        {/*    onMenuClick={onMenuClick}*/}
+        {/*    onClickOutside={onClickOutside}*/}
+        {/*    width={style.width220}*/}
+        {/*    label={"Display by"}*/}
+        {/*/>*/}
     </React.Fragment>;
 
     return (
         <WidgetFrame WidgetName={t("offersMenu")} OnCloseButton={props.OnCloseButton} WidgetNav={widgetNav}>
-            <h1>{t("hey")}</h1>
+            <Ranking />
         </WidgetFrame>
     );
 }

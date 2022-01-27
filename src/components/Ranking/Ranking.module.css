@@ -1,0 +1,13 @@
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.divider {
+    border: 0;
+    width: 100%;
+    border-top: 1px solid var(--theme-widget-divider);
+    margin: 8px 0;
+}
