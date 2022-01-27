@@ -1,10 +1,11 @@
 .container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 2fr 2fr;
     width: auto;
+    justify-items: flex-start;
     height: 54px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 5px 20px;
+    align-items: center;
+    padding: 5px 5px;
     align-self: stretch;
 }
 
@@ -12,12 +13,9 @@
     background-color: var(--theme-widget-button);
 }
 
-.ratingFrame {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-right: 25px;
+.imgFrame {
+    width: 45px;
+    height: 55px;
 }
 
 .commentFrame {
