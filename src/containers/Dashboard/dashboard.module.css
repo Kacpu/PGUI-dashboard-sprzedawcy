@@ -1,5 +1,4 @@
 .dashboardDiv {
-  
     padding-top: 4rem;
     padding-bottom: 2rem;
     margin: 0 auto;
@@ -9,39 +8,47 @@
     grid-gap: 2.5rem;
 }
 
-@media (max-width:500px){
-  .dashboardDiv{
-    grid-template-columns: repeat(1, 1fr);
-    float:left
+@media (max-width: 500px) {
+    .dashboardDiv {
+        max-width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        /*float: left*/
     }
 }
 
-@media (max-width: 800px){
-  .dashboardDiv{
-  /* max-width: 60%; */
-  grid-template-columns: repeat(1, 1fr);
-  /* transform: scale(50%); */
-  float:left
-  }
+@media (max-width: 800px) {
+    .dashboardDiv {
+        /* max-width: 60%; */
+        grid-template-columns: repeat(1, 1fr);
+        /* transform: scale(50%); */
+        /*float: left*/
+    }
 }
 
-@media (max-width: 1400px){
-  .dashboardDiv{
-    max-width: 50%;
-    max-height: 50%;
-    grid-template-columns: repeat(1, 1fr);}
+@media (max-width: 1400px) {
+    .dashboardDiv {
+        max-height: 50%;
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 
-@media (min-width: 1400px){
-  .dashboardDiv{
-
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (min-width: 800px) {
+    .dashboardDiv {
+        max-width: 50%;
+    }
 }
 
-.hiddenFrame{
-  visibility: hidden;
+@media (min-width: 1400px) {
+    .dashboardDiv {
+        max-width: 80%;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+.hiddenFrame {
+    visibility: hidden;
+}
+
 /* @media (min-width: 900px) {
     .dashboard-div { grid-template-columns: repeat(2, 1fr); }
   }
@@ -49,3 +56,4 @@
   @media (min-width: 600px) {
     .dashboard-div { grid-template-columns: repeat(2, 1fr); }
   }  */
+
