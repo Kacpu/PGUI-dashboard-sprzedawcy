@@ -63,3 +63,7 @@
     will-change: scroll-position;
 
 }
+
+.text {
+    padding-left: 15px;
+}

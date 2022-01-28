@@ -11,7 +11,7 @@ export default function Opinion(props){
             </div>
             <div className={styles.commentFrame}>
                 <div className={styles.label}>Comment</div>
-                <div rows={2} readOnly={true} className={styles.comment}>{props.comment}</div>
+                <div className={styles.comment}>{props.comment}</div>
             </div>
         </div>
     );

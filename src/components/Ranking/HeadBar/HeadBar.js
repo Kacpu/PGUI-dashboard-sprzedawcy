@@ -35,7 +35,7 @@ export default function HeadBar(props) {
         <React.Fragment>
             <div className={styles.container}>
                 <div></div>
-                <div className={styles.labelContainer}>Name</div>
+                <div className={`${styles.labelContainer} ${styles.text}`}>Name</div>
                 <div className={styles.labelContainer}>
                     <DropdownButton
                         name={"Sold [pcs]"}

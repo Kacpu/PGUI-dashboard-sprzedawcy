@@ -6,9 +6,9 @@ export default function Offer(props){
             <div className={styles.imgFrame}>
                 <img src={props.img} alt={props.name} className={styles.imgFrame}/>
             </div>
-            <div className={styles.comment}>{props.name}</div>
-            <div className={styles.comment}>{props.pcs}</div>
-            <div className={styles.comment}>{props.earning}</div>
+            <div className={styles.text}>{props.name}</div>
+            <div className={styles.text}>{props.pcs}</div>
+            <div className={styles.text}>{props.earning}</div>
         </div>
     );
 }
