@@ -6,7 +6,17 @@ Only frontend
 ## Available on `CodeSandbox`:
 https://codesandbox.io/s/seller-dashboard-7vzc81
 
+***
 
+# Panel sprzedawcy
+Tylko fronted
+`React.js z własnymi komponentami`
+> **Dokładna instrukcja użytkowania jest przedstawiona w pliku: "Instrukcja programu.pdf"**
+
+## Dostępne na `CodeSandbox`:
+https://codesandbox.io/s/seller-dashboard-7vzc81
+
+***
 ## Available Scripts
 
 In the project directory, you can run:
@@ -26,16 +36,6 @@ Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 ---
-
-# Panel sprzedawcy
-Tylko fronted
-`React.js z własnymi komponentami`
-> **Dokładna instrukcja użytkowania jest przedstawiona w pliku: "Instrukcja programu.pdf"**
-
-## Dostępne na `CodeSandbox`:
-https://codesandbox.io/s/seller-dashboard-7vzc81
-
-
 ## Dostępne skrypty
 
 W katalogu projektu możena uruchomić:
